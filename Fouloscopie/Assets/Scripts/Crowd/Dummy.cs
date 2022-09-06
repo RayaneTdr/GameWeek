@@ -99,7 +99,7 @@ public class Dummy : MonoBehaviour
     void Kill()
     {
         alive = false;
-        GetComponent<NavMeshAgent>().enabled = false;
+        agent.enabled = false;
         GetComponent<Rigidbody>().isKinematic = false;
         Destroy(gameObject, 1f);
     }

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] GameObject entityPrefab;
+    [SerializeField] List<GameObject> entityPrefabs = new List<GameObject>();
 
     [SerializeField] int count = 5;
     [SerializeField] float spawnRate = .5f; // in secs
 
     void Start() => StartCoroutine(InitSpawner());
-    void Spawn() => Instantiate(entityPrefab, transform.position, Quaternion.identity);
+    void Spawn() => Instantiate(entityPrefabs[Random.Range(0,entityPrefabs.Count)], transform.position, Quaternion.identity);
 
     IEnumerator InitSpawner()
     {
