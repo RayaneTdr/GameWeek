@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class Dummy : MonoBehaviour
 {
     NavMeshAgent agent;
+    Animator animator;
+
 
     public static int maxCollapsing = 5; // if this number is reached, start DESTRUCTION 
 
@@ -25,9 +27,11 @@ public class Dummy : MonoBehaviour
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        agent    = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
         spawnPos = transform.position;
         SetMarketDestination();
+        animator.SetTrigger("walk");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -98,6 +102,7 @@ public class Dummy : MonoBehaviour
 
     void Kill()
     {
+        animator.SetTrigger("die");
         alive = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = false;
