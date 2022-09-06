@@ -165,10 +165,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27358e554d213a24184557855bd5e137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenPercent: 0.05
-  cameraMovement: {x: 0, y: 0}
   cameraGrabMovement: {x: 0, y: 0}
   scrollDelta: 0
+  direction: {x: 0, y: 0}
+  mousePosition: {x: 0, y: 0}
+  deltaMouse: {x: 0, y: 0}
+  yawRotation: 0
+  leftClickPressed: 0
+  leftClickUnpressed: 0
+  leftClickHeldDown: 0
+  rightClickPressed: 0
+  rightClickUnpressed: 0
+  rightClickHeldDown: 0
+  rotateButtonHeldDown: 0
   actionPoint: 100
 --- !u!114 &249950551954629530
 MonoBehaviour:
@@ -182,12 +191,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e321b99e14a43ed4fb73cef4d1321b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_rotation: 75
+  m_pitchRotation: 75
   m_minZoom: 1
   m_maxZoom: 0.05
   m_offset: -50
+  m_zoomStep: 25
+  m_zoomSpeed: 0.005
+  m_left: -100
+  m_right: 100
+  m_back: -100
+  m_front: 100
   m_movementSpeed: 25
-  m_zoomSpeed: 0.05
+  m_rotationSpeed: 25
   cameraComponent: {fileID: 0}
   freeze: 0
 --- !u!114 &249950551954629525

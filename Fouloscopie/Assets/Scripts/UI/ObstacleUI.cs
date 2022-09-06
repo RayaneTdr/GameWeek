@@ -12,23 +12,22 @@ public class ObstacleUI : MonoBehaviour, IDragHandler, IBeginDragHandler
     [SerializeField]
     private PlayerController m_player;
 
-    public int cost = 25;
-
     public void OnDrag(PointerEventData eventData) {}
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         GameObject go = Instantiate(m_originalPrefab);
 
-        if(go.TryGetComponent<Obstacle>(out Obstacle obstacle) && m_player.actionPoint >= cost)
+        if(go.TryGetComponent<Obstacle>(out Obstacle obstacle))
         {
-            m_player.actionPoint -= cost;
+            if (m_player.actionPoint >= obstacle.cost)
+            {
+                m_grabber.BeginDrag(obstacle);
 
-            m_grabber.BeginDrag(obstacle);
+                return;
+            }
         }
-        else
-        {
-            Destroy(go);
-        }
+        
+        Destroy(go);
     }
 }
