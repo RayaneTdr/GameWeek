@@ -1052,6 +1052,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 249950551954629530, guid: 1a2eb5f7282de57488d411c43481d533,
+        type: 3}
+      propertyPath: m_zoomSpeed
+      value: 0.025
+      objectReference: {fileID: 0}
     - target: {fileID: 249950551954629531, guid: 1a2eb5f7282de57488d411c43481d533,
         type: 3}
       propertyPath: m_RootOrder

@@ -22,7 +22,7 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField, Range(5.0f, 50.0f)]
     private float m_movementSpeed = 25f;
     [SerializeField, Range(0.01f, 1.0f)] 
-    private float m_zoomSpeed = 0.05f;
+    private float m_zoomSpeed = 0.025f;
 
     [HideInInspector] 
     public Camera cameraComponent;
