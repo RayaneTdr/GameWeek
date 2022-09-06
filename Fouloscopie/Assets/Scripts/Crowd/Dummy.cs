@@ -105,7 +105,6 @@ public class Dummy : MonoBehaviour
         animator.SetTrigger("Death");
         alive = false;
         agent.enabled = false;
-        GetComponent<Rigidbody>().isKinematic = false;
         Destroy(gameObject, 1f);
     }
 }
