@@ -11,7 +11,7 @@ public class Dummy : MonoBehaviour
 
     public static int maxCollapsing = 5; // if this number is reached, start DESTRUCTION 
 
-    public static int deathRatio = 20;         // 5 = 1/5 chance, the nominator increase by time 
+    public static int deathRatio = 5;         // 5 = 1/5 chance, the nominator increase by time 
     public static float deathRatioTime = 1f; // time before the chance of die increase
 
     public bool alive = true;
@@ -28,10 +28,10 @@ public class Dummy : MonoBehaviour
     void Start()
     {
         agent    = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         spawnPos = transform.position;
         SetMarketDestination();
-        animator.SetTrigger("walk");
+        animator.SetTrigger("Walk");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -102,7 +102,7 @@ public class Dummy : MonoBehaviour
 
     void Kill()
     {
-        animator.SetTrigger("die");
+        animator.SetTrigger("Death");
         alive = false;
         agent.enabled = false;
         GetComponent<Rigidbody>().isKinematic = false;
