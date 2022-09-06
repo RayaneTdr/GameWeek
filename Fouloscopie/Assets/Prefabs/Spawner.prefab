@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8fb600525413a4bb6e67f5e07485ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityPrefab: {fileID: 7794375896818009958, guid: 9dfd43b954bfb944bb3a2852574ecf12,
-    type: 3}
+  entityPrefabs:
+  - {fileID: 2036636321190117217, guid: 8a866e9021415614c8e6902ec7dfeada, type: 3}
   count: 20
   spawnRate: 0.5

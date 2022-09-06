@@ -104,7 +104,7 @@ public class Dummy : MonoBehaviour
     {
         animator.SetTrigger("die");
         alive = false;
-        GetComponent<NavMeshAgent>().enabled = false;
+        agent.enabled = false;
         GetComponent<Rigidbody>().isKinematic = false;
         Destroy(gameObject, 1f);
     }
