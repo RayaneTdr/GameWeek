@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 m_oldMousePos;
     private bool    m_isGrabbing;
 
+    [SerializeField] private GameObject m_pauseMenu;
+
     //  Public Variables
 
     [HideInInspector] public Vector2 cameraGrabMovement;
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool rightClickHeldDown;
 
     [HideInInspector] public bool rotateButtonHeldDown;
+    [HideInInspector] public bool pause;
 
     //public float screenPercent = 0.05f;
     //[HideInInspector] public Vector2 cameraMovement;
@@ -38,6 +41,14 @@ public class PlayerController : MonoBehaviour
     {
         UpdateInputs();
 
+        if (pause)
+        {
+            if (!GameManager.Instance.isPaused)
+            {
+                GameManager.Instance.Pause();
+                ActivatePauseMenu(true);
+            }
+        }
 
         Vector2 mousePos = Input.mousePosition;
 
@@ -109,6 +120,11 @@ public class PlayerController : MonoBehaviour
 
     //  Functions
 
+    public void ActivatePauseMenu(bool value)
+    {
+        m_pauseMenu.SetActive(value);
+    }
+
     private  void UpdateInputs()
     {
         directionInput.x = Input.GetAxis("Horizontal");
@@ -122,8 +138,10 @@ public class PlayerController : MonoBehaviour
         rightClickUnpressed = Input.GetMouseButtonUp(1);
         rightClickHeldDown  = Input.GetMouseButton(1);
 
-        rotateButtonHeldDown = Input.GetButton("Jump");
+        rotateButtonHeldDown = Input.GetButton("Space");
 
         mousePosition = Input.mousePosition;
+
+        pause = Input.GetKeyDown(KeyCode.Escape);
     }
 }
