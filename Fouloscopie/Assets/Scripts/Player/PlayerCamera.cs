@@ -45,7 +45,7 @@ public class PlayerCamera : MonoBehaviour
     [HideInInspector] 
     public Camera cameraComponent;
     [HideInInspector] 
-    public bool freeze = false;
+    public bool freezeGrabMovements = false;
 
     private PlayerController m_playerController;
 
@@ -67,7 +67,7 @@ public class PlayerCamera : MonoBehaviour
 
     void Update()
     {
-        if (!freeze) UpdatePosition();
+        UpdatePosition();
 
         UpdateZoom();
 
@@ -81,7 +81,16 @@ public class PlayerCamera : MonoBehaviour
         float grabSpeed = cameraComponent.transform.localPosition.z / m_offset;
 
         /*m_playerController.cameraMovement * m_movementSpeed + */
-        Vector2 movement = (m_playerController.cameraGrabMovement * grabSpeed + m_playerController.direction) * m_movementSpeed;
+
+
+        //  First apply direction inputs to the movement
+        Vector2 movement = m_playerController.directionInput;
+
+        //  If grab movement are nopt frozen, apply it
+        if (!freezeGrabMovements) movement = m_playerController.directionInput += m_playerController.cameraGrabMovement * grabSpeed;
+
+        //  Scale the movement
+        movement *= m_movementSpeed;
 
         // Apply Yaw rotation
         movement = new Vector2(

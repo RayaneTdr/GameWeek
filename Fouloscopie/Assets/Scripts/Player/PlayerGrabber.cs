@@ -59,7 +59,7 @@ public class PlayerGrabber : MonoBehaviour
         }
         else
         {
-            m_playerCamera.freeze = false;
+            m_playerCamera.freezeGrabMovements = false;
         }
     }
 
@@ -86,6 +86,6 @@ public class PlayerGrabber : MonoBehaviour
         m_selected = selected;
         m_selected.Grab();
 
-        m_playerCamera.freeze = true;
+        m_playerCamera.freezeGrabMovements = true;
     }
 }

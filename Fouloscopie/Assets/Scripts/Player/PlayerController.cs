@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public Vector2 cameraGrabMovement;
     [HideInInspector] public float scrollDelta = 0.0f;
-    [HideInInspector] public Vector2 direction;
+    [HideInInspector] public Vector2 directionInput;
     [HideInInspector] public Vector2 mousePosition;
     [HideInInspector] public Vector2 deltaMouse;
     [HideInInspector] public float yawRotation;
@@ -68,9 +68,9 @@ public class PlayerController : MonoBehaviour
         cameraMovement *= scale * 0.05f;
         */
 
-        // WASD direction
+        // WASD directionInput
 
-        direction = direction.normalized * Mathf.Min(direction.magnitude, 1f);
+        directionInput = directionInput.normalized * Mathf.Min(directionInput.magnitude, 1f);
 
         // Camera movement using grab
 
@@ -111,8 +111,8 @@ public class PlayerController : MonoBehaviour
 
     private  void UpdateInputs()
     {
-        direction.x = Input.GetAxis("Horizontal");
-        direction.y = Input.GetAxis("Vertical");
+        directionInput.x = Input.GetAxis("Horizontal");
+        directionInput.y = Input.GetAxis("Vertical");
 
         leftClickPressed   = Input.GetMouseButtonDown(0);
         leftClickUnpressed = Input.GetMouseButtonUp(0);

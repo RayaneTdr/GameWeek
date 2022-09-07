@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraGrabMovement: {x: 0, y: 0}
   scrollDelta: 0
-  direction: {x: 0, y: 0}
+  directionInput: {x: 0, y: 0}
   mousePosition: {x: 0, y: 0}
   deltaMouse: {x: 0, y: 0}
   yawRotation: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_pitchRotation: 75
   m_minZoom: 1
-  m_maxZoom: 0.05
+  m_maxZoom: 0.1
   m_offset: -50
   m_zoomStep: 25
   m_zoomSpeed: 0.005
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_movementSpeed: 25
   m_rotationSpeed: 25
   cameraComponent: {fileID: 0}
-  freeze: 0
+  freezeGrabMovements: 0
 --- !u!114 &249950551954629525
 MonoBehaviour:
   m_ObjectHideFlags: 0
