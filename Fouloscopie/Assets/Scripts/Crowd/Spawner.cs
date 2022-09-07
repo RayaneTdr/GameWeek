@@ -10,7 +10,12 @@ public class Spawner : MonoBehaviour
     [SerializeField] float spawnRate = .5f; // in secs
 
     void Start() => StartCoroutine(InitSpawner());
-    void Spawn() => Instantiate(entityPrefabs[Random.Range(0,entityPrefabs.Count)], transform.position, Quaternion.identity);
+    void Spawn() 
+    {
+        int spawnIndex = Random.Range(0, entityPrefabs.Count);
+        Dummy go= Instantiate(entityPrefabs[spawnIndex], transform.position, Quaternion.identity).GetComponent<Dummy>();
+        go.spawnPos = transform;
+    }
 
     IEnumerator InitSpawner()
     {

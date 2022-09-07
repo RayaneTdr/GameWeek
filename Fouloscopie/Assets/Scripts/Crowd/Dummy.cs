@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Pathfinding;
 
 public class Dummy : MonoBehaviour
 {
-    NavMeshAgent agent;
+    AIDestinationSetter agent;
     Animator animator;
 
 
@@ -16,7 +17,10 @@ public class Dummy : MonoBehaviour
 
     public bool alive = true;
 
-    Vector3 spawnPos = Vector3.zero;
+    [HideInInspector] internal Transform spawnPos = null;
+
+    [SerializeField] float corpseDuration = 1.5f;
+
 
     float timeBeforeDeathChanceIncrease = 1f;
 
@@ -27,9 +31,8 @@ public class Dummy : MonoBehaviour
 
     void Start()
     {
-        agent    = GetComponent<NavMeshAgent>();
+        agent    = GetComponent<AIDestinationSetter>();
         animator = GetComponentInChildren<Animator>();
-        spawnPos = transform.position;
         SetMarketDestination();
         animator.SetTrigger("Walk");
     }
@@ -37,6 +40,9 @@ public class Dummy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("dummy"))
+            return;
+
+        if (!other.GetComponent<Dummy>().alive)
             return;
 
         currentCollapsing++;
@@ -56,13 +62,14 @@ public class Dummy : MonoBehaviour
 
     void SetMarketDestination()
     {
-        Vector3 destination = GameObject.FindGameObjectWithTag("target").transform.position;
-        agent.SetDestination(destination);
+        Transform destination = GameObject.FindGameObjectWithTag("target").transform;
+        agent.target = destination;
     }
 
     public void SetEntryAsDestination()
     {
-        agent.SetDestination(spawnPos);
+        if (spawnPos)
+            agent.target = spawnPos;
     }
 
     IEnumerator InitializeDeathProtocol()
@@ -104,8 +111,45 @@ public class Dummy : MonoBehaviour
     {
         animator.SetTrigger("Death");
         alive = false;
+        GetComponent<AIPath>().enabled = false;
+        GetComponent<Pathfinding.RVO.RVOController>().enabled = false;
         agent.enabled = false;
-        Destroy(gameObject, 1f);
+        StartCoroutine(CorpseAnimation());
+    }
+
+    IEnumerator CorpseAnimation()
+    {
+        Timer timer = new Timer(corpseDuration);
+        timer.Start();
+
+        while (timer.Remaining >= 0f) 
+        {
+            timer.Tick(Time.deltaTime);
+            yield return null;
+        }
+
+        timer.Reset();
+        timer.max = 1f;
+
+        Renderer[] rdrs = GetComponentsInChildren<Renderer>();
+
+        while (timer.Remaining >= 0f) 
+        {
+            
+            foreach (Renderer rdr in rdrs) 
+            {
+                if (rdr is ParticleSystemRenderer)
+                    continue;
+
+                Color clr = rdr.material.color;
+                rdr.material.color = new Color(clr.r, clr.g, clr.b, timer.Remaining);
+            }
+
+            timer.Tick(Time.deltaTime);
+            yield return null;
+        }
+
+        Destroy(gameObject, .5f);
     }
 }
 
