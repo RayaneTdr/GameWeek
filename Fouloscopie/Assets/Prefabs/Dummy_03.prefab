@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.5
+  radius: 0.7
   height: 2
   canMove: 1
   maxSpeed: 3
@@ -499,8 +499,8 @@ MonoBehaviour:
   centerBackingField: 1
   locked: 0
   lockWhenNotMoving: 0
-  agentTimeHorizon: 5
-  obstacleTimeHorizon: 5
+  agentTimeHorizon: 2
+  obstacleTimeHorizon: 2
   maxNeighbours: 50
   layer: 1
   collidesWith: -1
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  useRaycasting: 1
+  useRaycasting: 0
   mask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -529,8 +529,8 @@ MonoBehaviour:
   thickRaycastRadius: 1
   use2DPhysics: 0
   raycastOffset: {x: 0, y: 0, z: 0}
-  useGraphRaycasting: 0
-  quality: 1
+  useGraphRaycasting: 1
+  quality: 2
 --- !u!114 &402548942805623113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,8 +544,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  smoothType: 0
-  subdivisions: 2
+  smoothType: 1
+  subdivisions: 1
   iterations: 2
   strength: 0.5
   uniformLength: 1
