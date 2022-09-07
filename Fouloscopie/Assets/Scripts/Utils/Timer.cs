@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Timer
 {
-    public Timer(float _max) { max = _max; }
+    public Timer(float _max=1f) { max = _max; }
 
     // ------ Public
     public float max = 1f;

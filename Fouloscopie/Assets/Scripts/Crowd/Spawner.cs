@@ -6,32 +6,43 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] List<GameObject> entityPrefabs = new List<GameObject>();
 
-    [SerializeField] int count = 5;
     [SerializeField] float spawnRate = .5f; // in secs
+    public int spawnerIndex = 0;
 
-    void Start() => StartCoroutine(InitSpawner());
+    [SerializeField] int countToSpawn = 0;
+
+    Timer timer = new Timer();
+
+    public void AddDummy() 
+    {
+        countToSpawn++;
+    }
+
+    private void Start()
+    {
+        WaveManager.Instance.spawners.Add(this);
+        timer.max = spawnRate;
+        timer.Start();
+    }
+
     void Spawn() 
     {
         int spawnIndex = Random.Range(0, entityPrefabs.Count);
         Dummy go= Instantiate(entityPrefabs[spawnIndex], transform.position, Quaternion.identity).GetComponent<Dummy>();
         go.spawnPos = transform;
+        countToSpawn--;
+
     }
 
-    IEnumerator InitSpawner()
+    private void Update()
     {
-        Timer timer = new Timer(spawnRate);
-        timer.Start();
-
-        while (count > 0)
+        if (countToSpawn > 0) 
         {
-            if (timer.Tick(Time.deltaTime)) 
+            if (timer.Tick(Time.deltaTime))
             {
                 Spawn();
                 timer.Reset();
-                count--;
             }
-            yield return null;
         }
     }
-
 }
