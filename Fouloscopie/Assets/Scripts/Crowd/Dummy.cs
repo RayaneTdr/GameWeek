@@ -21,6 +21,7 @@ public class Dummy : MonoBehaviour
 
     [SerializeField] float corpseDuration = 1.5f;
 
+    [SerializeField] GameObject willDieSystem = null;
 
     float timeBeforeDeathChanceIncrease = 1f;
 
@@ -46,8 +47,12 @@ public class Dummy : MonoBehaviour
             return;
 
         currentCollapsing++;
-        if (IsOvercollapsing)
+        if (IsOvercollapsing) 
+        {
+            GetComponentInChildren<Outline>().enabled = true;
+            willDieSystem.SetActive(true);
             StartCoroutine(InitializeDeathProtocol());
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -105,6 +110,8 @@ public class Dummy : MonoBehaviour
     void ResetDieChance()
     {
         deathIncreaseChance = 0;
+        willDieSystem.SetActive(false);
+        GetComponentInChildren<Outline>().enabled = false;
     }
 
     void Kill()

@@ -5199,6 +5199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
+  corpseDuration: 1.5
+  willDieSystem: {fileID: 0}
   deathIncreaseChance: 0
   currentCollapsing: 0
 --- !u!1 &2272063465509184741
