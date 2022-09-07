@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2206429781351613287}
   - component: {fileID: 2968166443134307522}
   - component: {fileID: 1069038587973056520}
+  - component: {fileID: 8712250061811017634}
   m_Layer: 0
   m_Name: Antivol
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8712250061811017634
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573164326426909149}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3351981, y: 1.34191, z: 1.3037571}
+  m_Center: {x: 0, y: 0, z: 0.65187854}
