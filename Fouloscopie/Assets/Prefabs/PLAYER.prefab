@@ -152,11 +152,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -252.00952
       objectReference: {fileID: 0}
-    - target: {fileID: 3386778769275619777, guid: cb7ce9c80cf0ddf4eb19b1ce282b8474,
+    - target: {fileID: 515623349079635595, guid: cb7ce9c80cf0ddf4eb19b1ce282b8474,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 5248342299767598373}
+      propertyPath: m_AnchoredPosition.y
+      value: -87.522095
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386778768744662462, guid: cb7ce9c80cf0ddf4eb19b1ce282b8474,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -67.12152
+      objectReference: {fileID: 0}
     - target: {fileID: 3386778769275619777, guid: cb7ce9c80cf0ddf4eb19b1ce282b8474,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -292,12 +297,6 @@ PrefabInstance:
 --- !u!224 &3157787416488268169 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3386778769776595957, guid: cb7ce9c80cf0ddf4eb19b1ce282b8474,
-    type: 3}
-  m_PrefabInstance: {fileID: 347612475113669244}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5248342299767598373 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5478396089002946393, guid: cb7ce9c80cf0ddf4eb19b1ce282b8474,
     type: 3}
   m_PrefabInstance: {fileID: 347612475113669244}
   m_PrefabAsset: {fileID: 0}
