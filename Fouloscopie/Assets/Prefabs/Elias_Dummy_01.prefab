@@ -5142,7 +5142,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036636321190117217}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -5193,14 +5193,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036636321190117217}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36010904d81dc914f8db95b7a65e44d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
   corpseDuration: 1.5
-  willDieSystem: {fileID: 0}
   deathIncreaseChance: 0
   currentCollapsing: 0
 --- !u!1 &2272063465509184741

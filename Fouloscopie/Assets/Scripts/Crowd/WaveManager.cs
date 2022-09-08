@@ -11,7 +11,7 @@ public class WaveManager : MonoBehaviour
 
 
     // ----- TO REMOVE
-    PlayerCamera cam;
+    public PlayerCamera cam;
     public GameObject smokePrefab;
 
     private void Awake()
@@ -36,18 +36,23 @@ public class WaveManager : MonoBehaviour
 
     int waveIndex = -1;
 
-    bool dirtyFlag = false;
+
+    bool dirtyFlag = false; //ratio
+
+    bool isActive = false;
 
     private void Start()
     {
-        cam = FindObjectOfType<PlayerCamera>();
         currentTime = startingTime;
     }
 
     private void Update()
     {
-        UpdateHour();
+        if (isActive)
+            UpdateHour();
 
+
+        //------ TO REMOVE
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (cam.RaycastToMouse(out RaycastHit hit, LayerMask.GetMask("Floor")))
@@ -151,5 +156,10 @@ public class WaveManager : MonoBehaviour
         if (waves[waveIndex] > 0) // force spawn the remaining
             TrySpawn(true);
 
+    }
+
+    public void StartGame() 
+    {
+        isActive = true;
     }
 }
