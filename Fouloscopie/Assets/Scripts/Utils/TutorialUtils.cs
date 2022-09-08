@@ -5,10 +5,11 @@ public class TutorialUtils : MonoBehaviour
 {
 
     [SerializeField] GameObject player = null;
+    [SerializeField] private bool forceTutotial = false;
 
     private void Awake()
     {
-        gameObject.SetActive(!Convert.ToBoolean(PlayerPrefs.GetInt("Game.IgnoreTutorial", 0)));
+        gameObject.SetActive(!Convert.ToBoolean(PlayerPrefs.GetInt("Game.IgnoreTutorial", 0)) || forceTutotial);
     }
 
     public void StartTutorial() 

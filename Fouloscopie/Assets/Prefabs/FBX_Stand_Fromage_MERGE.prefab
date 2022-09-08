@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8384956703323946457}
   - component: {fileID: 4896118850944791164}
   - component: {fileID: 7212080971048847030}
+  - component: {fileID: 1375695239681008235}
   m_Layer: 0
   m_Name: FBX_Stand_Fromage_MERGE
   m_TagString: Untagged
@@ -106,6 +107,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1375695239681008235
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157657656999487331}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2160927301312651365, guid: c375a938c22670b42bea5a34e1356ecf, type: 3}
 --- !u!1001 &113195095864302685
 PrefabInstance:
   m_ObjectHideFlags: 0
