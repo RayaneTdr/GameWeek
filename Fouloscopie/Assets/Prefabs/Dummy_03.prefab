@@ -259,7 +259,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3063301170848415782}
   - component: {fileID: 2999842627530814308}
-  - component: {fileID: 4522374726866061885}
   m_Layer: 1
   m_Name: Chara
   m_TagString: Untagged
@@ -306,24 +305,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4522374726866061885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2434433659147983516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1 &3008312641012123505
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +393,9 @@ MonoBehaviour:
   willDieSystem: {fileID: 7924238672007752743}
   deathIncreaseChance: 0
   currentCollapsing: 0
+  onDieBroadcast:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2109459713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,11 +431,11 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 0.6
+  slowdownDistance: 0.2
   pickNextWaypointDist: 1.5
   endReachedDistance: 0.2
   alwaysDrawGizmos: 0
-  slowWhenNotFacingTarget: 1
+  slowWhenNotFacingTarget: 0
   whenCloseToDestination: 0
   constrainInsideGraph: 0
 --- !u!114 &2109459714
@@ -514,8 +498,8 @@ MonoBehaviour:
   centerBackingField: 1
   locked: 0
   lockWhenNotMoving: 0
-  agentTimeHorizon: 2
-  obstacleTimeHorizon: 2
+  agentTimeHorizon: 0.5
+  obstacleTimeHorizon: 0.5
   maxNeighbours: 50
   layer: 1
   collidesWith: -1
@@ -5822,6 +5806,7 @@ GameObject:
   - component: {fileID: 7924238670935135449}
   - component: {fileID: 7924238670935135455}
   - component: {fileID: 7924238670935135454}
+  - component: {fileID: 6413201107550528626}
   m_Layer: 0
   m_Name: Exclamation
   m_TagString: Untagged
@@ -5916,6 +5901,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6413201107550528626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924238670935135448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3c3cd308298ee48a1fac9f4b8beab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7924238672007752743
 GameObject:
   m_ObjectHideFlags: 0
@@ -5933,7 +5930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7924238672007752740
 Transform:
   m_ObjectHideFlags: 0
