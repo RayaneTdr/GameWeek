@@ -573,7 +573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous avez \xE9t\xE9 acceuilli par le Groupe 11"
+  m_text: You have been recieved by Group 11
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ab331dc765ce67249b68cb24934aee63, type: 2}
   m_sharedMaterial: {fileID: -5291889707902923968, guid: ab331dc765ce67249b68cb24934aee63,
@@ -601,8 +601,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21
-  m_fontSizeBase: 21
+  m_fontSize: 19.5
+  m_fontSizeBase: 19.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -709,7 +709,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Personnages morts:\n\nPersonnages ayant surv\xE9cu:"
+  m_text: 'Dead:
+
+
+    Satisfied Clients:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ab331dc765ce67249b68cb24934aee63, type: 2}
   m_sharedMaterial: {fileID: -5291889707902923968, guid: ab331dc765ce67249b68cb24934aee63,
