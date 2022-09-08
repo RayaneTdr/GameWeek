@@ -14,6 +14,8 @@ public class TutorialUtils : MonoBehaviour
     public void StartTutorial() 
     {
         player.SetActive(false);
+        WaveManager.Instance.Pause();
+
     }
 
     public void StartGame()
