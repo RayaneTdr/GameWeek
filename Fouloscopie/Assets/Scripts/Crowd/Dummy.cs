@@ -32,25 +32,30 @@ public class Dummy : MonoBehaviour
 
     public bool IsOvercollapsing => currentCollapsing >= maxCollapsing;
 
+    [HideInInspector] public bool isAttracted = false;
     void Start()
     {
-        agent    = GetComponent<AIDestinationSetter>();
+        agent = GetComponent<AIDestinationSetter>();
         animator = GetComponentInChildren<Animator>();
         SetMarketDestination();
-        animator.SetTrigger("Walk");
     }
+
+    // Auto Register
+    private void OnEnable() => WaveManager.Instance.dummies.Add(this);
+    private void OnDisable() => WaveManager.Instance.dummies.Remove(this);
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("dummy"))
             return;
 
-        if (other.TryGetComponent(out Dummy d) && d.alive) 
+        if (other.TryGetComponent(out Dummy d) && d.alive)
         {
             currentCollapsing++;
             d.onDieBroadcast.AddListener(DecrementCollapsing);
 
-        if (IsOvercollapsing)
+            if (IsOvercollapsing)
             {
                 GetComponentInChildren<Outline>().enabled = true;
                 willDieSystem.SetActive(true);
@@ -71,12 +76,31 @@ public class Dummy : MonoBehaviour
 
     void SetMarketDestination()
     {
+        animator.SetTrigger("Walk");
         Transform destination = GameObject.FindGameObjectWithTag("target").transform;
         agent.target = destination;
     }
 
+    public void SetPromotionDestination() 
+    {
+        if (WaveManager.Instance.promotionT) 
+        {
+            agent.target = WaveManager.Instance.promotionT;
+            isAttracted = true;
+            // activate particles
+        }
+    }
+
+    public void ResetPromotionDestination() 
+    {
+        GetComponent<AIPath>().isStopped = false;
+        isAttracted = false;
+        SetMarketDestination();
+    }
+
     public void SetEntryAsDestination()
     {
+        // to change so that they try to reach the doors
         if (spawnPos)
             agent.target = spawnPos;
     }
@@ -98,6 +122,14 @@ public class Dummy : MonoBehaviour
     {
         int random = Random.Range(1, deathRatio);
         return deathIncreaseChance + random >= deathRatio;
+    }
+
+
+    public void StandAtPromotion() 
+    {
+        agent.target = null;
+        animator.SetTrigger("Stand");
+        GetComponent<AIPath>().isStopped = true;
     }
 
     void UpdateDieChance()
