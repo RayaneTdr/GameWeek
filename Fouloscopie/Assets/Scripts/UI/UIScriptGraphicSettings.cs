@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UIScriptGraphicSettings : UIScriptSubMenu
+public class UIScriptGraphicSettings : MonoBehaviour
 {
     private Settings settings;
 
@@ -52,15 +52,15 @@ public class UIScriptGraphicSettings : UIScriptSubMenu
 
     public void SetQuality(int level)
     {
-        settings.GraphicsLevel = level;
+        if (settings) settings.GraphicsLevel = level;
     }
 
     public void SetFullScreen(bool value)
     {
-        settings.FullScreen = value;
+        if (settings) settings.FullScreen = value;
     }
     public void SetResolution(int index)
     {
-        settings.CurrentResolution = m_resolutions[index];
+        if (settings) settings.CurrentResolution = m_resolutions[index];
     }
 }
