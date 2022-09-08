@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5041623254664325435}
   - component: {fileID: 8239522668111636126}
   - component: {fileID: 6177915592604013140}
-  m_Layer: 0
+  - component: {fileID: 5127858028858355865}
+  m_Layer: 6
   m_Name: Caddie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5127858028858355865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673586720322220929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5875032, y: 0.86660624, z: 1.3770492}
+  m_Center: {x: -0.17073008, y: -0.005193682, z: 0.6865814}
