@@ -23,6 +23,8 @@ public class Dummy : MonoBehaviour
 
     [SerializeField] GameObject willDieSystem = null;
 
+    public bool isLeaving = false;
+
     float timeBeforeDeathChanceIncrease = 1f;
 
     public int deathIncreaseChance = 0;
@@ -32,25 +34,30 @@ public class Dummy : MonoBehaviour
 
     public bool IsOvercollapsing => currentCollapsing >= maxCollapsing;
 
+    [HideInInspector] public bool isAttracted = false;
     void Start()
     {
-        agent    = GetComponent<AIDestinationSetter>();
+        agent = GetComponent<AIDestinationSetter>();
         animator = GetComponentInChildren<Animator>();
         SetMarketDestination();
-        animator.SetTrigger("Walk");
     }
+
+    // Auto Register
+    private void OnEnable() => WaveManager.Instance.dummies.Add(this);
+    private void OnDisable() => WaveManager.Instance.dummies.Remove(this);
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("dummy"))
             return;
 
-        if (other.TryGetComponent(out Dummy d) && d.alive) 
+        if (other.TryGetComponent(out Dummy d) && d.alive)
         {
             currentCollapsing++;
             d.onDieBroadcast.AddListener(DecrementCollapsing);
 
-        if (IsOvercollapsing)
+            if (IsOvercollapsing)
             {
                 GetComponentInChildren<Outline>().enabled = true;
                 willDieSystem.SetActive(true);
@@ -71,14 +78,32 @@ public class Dummy : MonoBehaviour
 
     void SetMarketDestination()
     {
-        Transform destination = GameObject.FindGameObjectWithTag("target").transform;
+        animator.SetTrigger("Walk");
+        Transform destination = WaveManager.Instance.GetNearestTarget(transform.position);
         agent.target = destination;
+    }
+
+    public void SetPromotionDestination() 
+    {
+        if (WaveManager.Instance.promotionT) 
+        {
+            agent.target = WaveManager.Instance.promotionT;
+            isAttracted = true;
+            // activate particles
+        }
+    }
+
+    public void ResetPromotionDestination() 
+    {
+        GetComponent<AIPath>().isStopped = false;
+        isAttracted = false;
+        SetMarketDestination();
     }
 
     public void SetEntryAsDestination()
     {
-        if (spawnPos)
-            agent.target = spawnPos;
+        isLeaving = true;
+        agent.target = WaveManager.Instance.GetNearestEnd(transform.position);
     }
 
     IEnumerator InitializeDeathProtocol()
@@ -98,6 +123,14 @@ public class Dummy : MonoBehaviour
     {
         int random = Random.Range(1, deathRatio);
         return deathIncreaseChance + random >= deathRatio;
+    }
+
+
+    public void StandAtPromotion() 
+    {
+        agent.target = null;
+        animator.SetTrigger("Stand");
+        GetComponent<AIPath>().isStopped = true;
     }
 
     void UpdateDieChance()
@@ -126,6 +159,7 @@ public class Dummy : MonoBehaviour
         GetComponent<AIPath>().enabled = false;
         GetComponent<Pathfinding.RVO.RVOController>().enabled = false;
         agent.enabled = false;
+        GameManager.diedDummies++;
         StartCoroutine(CorpseAnimation());
     }
 
@@ -170,5 +204,11 @@ public class Dummy : MonoBehaviour
         currentCollapsing--;
         if (currentCollapsing < 0) currentCollapsing = 0;
     }
+
+    public void Leave() 
+    {
+        GameManager.savedDummies++;
+        Destroy(gameObject);
+    }   
 }
 

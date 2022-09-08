@@ -38,4 +38,6 @@ public class GameManager : MonoBehaviour
         isPaused = false;
     }
 
+    public static int diedDummies  = 0;
+    public static int savedDummies = 0;
 }
