@@ -180,7 +180,7 @@ MonoBehaviour:
   rightClickHeldDown: 0
   rotateButtonHeldDown: 0
   pause: 0
-  actionPoint: 100
+  obstacleLimit: 5
 --- !u!114 &249950551954629530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_maxZoom: 0.1
   m_offset: -50
   m_zoomStep: 25
-  m_zoomSpeed: 0.005
+  m_zoomSpeed: 0.015
   m_left: -100
   m_right: 100
   m_back: -100

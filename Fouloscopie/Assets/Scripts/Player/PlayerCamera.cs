@@ -44,8 +44,6 @@ public class PlayerCamera : MonoBehaviour
 
     [HideInInspector] 
     public Camera cameraComponent;
-    [HideInInspector] 
-    public bool freezeGrabMovements = false;
 
     private PlayerController m_playerController;
 
@@ -87,7 +85,7 @@ public class PlayerCamera : MonoBehaviour
         Vector2 movement = m_playerController.directionInput;
 
         //  If grab movement are nopt frozen, apply it
-        if (!freezeGrabMovements) movement = m_playerController.directionInput += m_playerController.cameraGrabMovement * grabSpeed;
+        movement += m_playerController.cameraGrabMovement * grabSpeed;
 
         //  Scale the movement
         movement *= m_movementSpeed;

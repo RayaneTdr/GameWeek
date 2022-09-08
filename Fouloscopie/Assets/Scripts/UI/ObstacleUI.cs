@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class ObstacleUI : MonoBehaviour, IDragHandler, IBeginDragHandler
+public class ObstacleUI : MonoBehaviour
 {
     [SerializeField]
     private GameObject m_originalPrefab;
@@ -12,7 +11,7 @@ public class ObstacleUI : MonoBehaviour, IDragHandler, IBeginDragHandler
     [SerializeField]
     private PlayerController m_player;
 
-    public void OnDrag(PointerEventData eventData) {}
+    /*public void OnDrag(PointerEventData eventData) {}
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -28,6 +27,23 @@ public class ObstacleUI : MonoBehaviour, IDragHandler, IBeginDragHandler
             }
         }
         
+        Destroy(go);
+    }*/
+
+    public void OnClick()
+    {
+        GameObject go = Instantiate(m_originalPrefab);
+
+        if (go.TryGetComponent<Obstacle>(out Obstacle obstacle))
+        {
+            if (m_player.obstacleLimit > 0)
+            {
+                m_grabber.BeginDrag(obstacle, false);
+
+                return;
+            }
+        }
+
         Destroy(go);
     }
 }
