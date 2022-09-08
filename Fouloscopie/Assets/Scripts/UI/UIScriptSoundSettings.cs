@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIScriptSoundSettings : UIScriptSubMenu
+public class UIScriptSoundSettings : MonoBehaviour
 {
     private Settings settings;
     [SerializeField] private Slider globalVolumeSlider;

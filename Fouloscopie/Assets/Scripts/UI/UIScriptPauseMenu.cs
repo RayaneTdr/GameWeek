@@ -1,14 +1,31 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIScriptPauseMenu : MonoBehaviour
+public class UIScriptPauseMenu : UIScriptOptions
 {
     [SerializeField] private PlayerController player;
 
+    public void Open()
+    {
+        if (!m_isOpen)
+        {
+            GameManager.Instance.Pause();
+            m_animator.SetTrigger("Open");
+        }
+    }
+
+    public void Close()
+    {
+        if (m_isOpen)
+        {
+            GameManager.Instance.Resume();
+            m_animator.SetTrigger("Close");
+        }
+    }
+
     public void Resume()
     {
-        GameManager.Instance.Resume();
-        player.ActivatePauseMenu(false);
+        Close();
     }
 
     public void Restart()

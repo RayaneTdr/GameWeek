@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 m_oldMousePos;
     private bool    m_isGrabbing;
 
-    [SerializeField] private GameObject m_pauseMenu;
+    [SerializeField] private UIScriptPauseMenu m_pauseMenu;
 
     //  Public Variables
 
@@ -45,8 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!GameManager.Instance.isPaused)
             {
-                GameManager.Instance.Pause();
-                ActivatePauseMenu(true);
+                m_pauseMenu.Open();
             }
         }
 
@@ -119,11 +118,6 @@ public class PlayerController : MonoBehaviour
     }
 
     //  Functions
-
-    public void ActivatePauseMenu(bool value)
-    {
-        m_pauseMenu.SetActive(value);
-    }
 
     private  void UpdateInputs()
     {

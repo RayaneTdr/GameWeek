@@ -3,9 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class UIScriptMainMenu : MonoBehaviour
 {
+    [SerializeField] private string m_scene;
     public void OnPlayButtonPressed()
     {
-        SceneManager.LoadScene("Zoo_Noe");
+        SceneManager.LoadScene(m_scene);
     }
 
     public void OnQuitButtonPressed()

@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 using Pathfinding;
+using UnityEngine.Events;
 
 public class Dummy : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class Dummy : MonoBehaviour
     Animator animator;
 
 
-    public static int maxCollapsing = 5; // if this number is reached, start DESTRUCTION 
+    public static int maxCollapsing = 4; // if this number is reached, start DESTRUCTION 
 
     public static int deathRatio = 5;         // 5 = 1/5 chance, the nominator increase by time 
     public static float deathRatioTime = 1f; // time before the chance of die increase
@@ -21,11 +21,14 @@ public class Dummy : MonoBehaviour
 
     [SerializeField] float corpseDuration = 1.5f;
 
+    [SerializeField] GameObject willDieSystem = null;
 
     float timeBeforeDeathChanceIncrease = 1f;
 
     public int deathIncreaseChance = 0;
     public int currentCollapsing = 0;
+
+    public UnityEvent onDieBroadcast; // usefull to tell collapsed dummies that 'this' died
 
     public bool IsOvercollapsing => currentCollapsing >= maxCollapsing;
 
@@ -42,12 +45,18 @@ public class Dummy : MonoBehaviour
         if (!other.CompareTag("dummy"))
             return;
 
-        if (!other.GetComponent<Dummy>().alive)
-            return;
+        if (other.TryGetComponent(out Dummy d) && d.alive) 
+        {
+            currentCollapsing++;
+            d.onDieBroadcast.AddListener(DecrementCollapsing);
 
-        currentCollapsing++;
         if (IsOvercollapsing)
-            StartCoroutine(InitializeDeathProtocol());
+            {
+                GetComponentInChildren<Outline>().enabled = true;
+                willDieSystem.SetActive(true);
+                StartCoroutine(InitializeDeathProtocol());
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -105,11 +114,14 @@ public class Dummy : MonoBehaviour
     void ResetDieChance()
     {
         deathIncreaseChance = 0;
+        willDieSystem.SetActive(false);
+        GetComponentInChildren<Outline>().enabled = false;
     }
 
     void Kill()
     {
         animator.SetTrigger("Death");
+        onDieBroadcast.Invoke();
         alive = false;
         GetComponent<AIPath>().enabled = false;
         GetComponent<Pathfinding.RVO.RVOController>().enabled = false;
@@ -131,6 +143,7 @@ public class Dummy : MonoBehaviour
         timer.Reset();
         timer.max = 1f;
 
+        // Fade Out
         Renderer[] rdrs = GetComponentsInChildren<Renderer>();
 
         while (timer.Remaining >= 0f) 
@@ -150,6 +163,12 @@ public class Dummy : MonoBehaviour
         }
 
         Destroy(gameObject, .5f);
+    }
+
+    void DecrementCollapsing() 
+    {
+        currentCollapsing--;
+        if (currentCollapsing < 0) currentCollapsing = 0;
     }
 }
 
