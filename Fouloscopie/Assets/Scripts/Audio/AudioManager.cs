@@ -5,24 +5,15 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private Sound[] m_sounds;
 
+    AudioSource source;
 
-    private void Awake()
+    private void Start()
     {
-        foreach(Sound s in m_sounds)
-        {
-            if (!s.spatialized)
-            {
-                s.source = gameObject.AddComponent<AudioSource>();
-                s.source.outputAudioMixerGroup = s.group;
-                s.source.volume = s.volume;
-                s.source.pitch = s.pitch;
-            }
-        }
+        source = GetComponent<AudioSource>();
     }
-
     public void Play(string name)
     {
-        Array.Find(m_sounds, sound => sound.name == name)?.Play();
+        Array.Find(m_sounds, sound => sound.name == name)?.Play(source);
     }
 
     public AudioClip GetClip(string name) 
