@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerCamera))]
@@ -15,6 +16,7 @@ public class PlayerGrabber : MonoBehaviour
     private int m_raycastTargetLayerMask = 0;
 
     private bool m_holdDrag = true;
+    private List<Obstacle> m_obstacles = new List<Obstacle>();
 
     // MonoBehaviour Functions
 
@@ -59,14 +61,28 @@ public class PlayerGrabber : MonoBehaviour
             {
                 DropPreview();
             }
+
+            return;
         }
-        else if(m_playerController.leftClickPressed)
+        
+        if(m_playerController.leftClickPressed)
         {
             if (m_playerCamera.RaycastToMouse(out RaycastHit hit, m_obstacleLayerMask))
             {
                 if (hit.transform.gameObject.TryGetComponent<Obstacle>(out Obstacle obstacle))
                 {
                     BeginDrag(obstacle);
+                }
+            }
+        }
+        else if(m_playerController.rightClickPressed)
+        {
+            if (m_playerCamera.RaycastToMouse(out RaycastHit hit, m_obstacleLayerMask))
+            {
+                if (hit.transform.gameObject.TryGetComponent<Obstacle>(out Obstacle obstacle))
+                {
+                    obstacle.StartDestroy();
+                    m_obstacles.Remove(obstacle);
                 }
             }
         }
@@ -88,7 +104,17 @@ public class PlayerGrabber : MonoBehaviour
         //  if it was successfully dropped, and was a new obstacle, then consume points from the player
         if (dropped && wasNew)
         {
-            m_playerController.obstacleLimit--;
+                Debug.Log(m_obstacles.Count);
+            if(m_playerController.obstacleLimit > m_obstacles.Count)
+            {
+                m_obstacles.Add(m_selected);
+            }
+            else
+            {
+                m_obstacles[0].StartDestroy();
+                m_obstacles.RemoveAt(0);
+                m_obstacles.Add(m_selected);
+            }
         }
 
         //  Remove selected obstacle

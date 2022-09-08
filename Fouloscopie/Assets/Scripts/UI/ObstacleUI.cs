@@ -36,14 +36,11 @@ public class ObstacleUI : MonoBehaviour
 
         if (go.TryGetComponent<Obstacle>(out Obstacle obstacle))
         {
-            if (m_player.obstacleLimit > 0)
-            {
-                m_grabber.BeginDrag(obstacle, false);
-
-                return;
-            }
+            m_grabber.BeginDrag(obstacle, false);
         }
-
-        Destroy(go);
+        else
+        {
+            Destroy(go);
+        }
     }
 }

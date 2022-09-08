@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool rightClickUnpressed;
     [HideInInspector] public bool rightClickHeldDown;
 
+    [HideInInspector] public bool middleClickPressed;
+    [HideInInspector] public bool middleClickUnpressed;
+    [HideInInspector] public bool middleClickHeldDown;
+
     [HideInInspector] public bool rotateButtonHeldDown;
     [HideInInspector] public bool pause;
     [HideInInspector] public bool freezeGrabMovement;
@@ -109,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
         // Yaw rotation controls
 
-        if(rightClickHeldDown)
+        if(middleClickHeldDown)
         {
             yawRotation = deltaMouse.x;
         }
@@ -134,6 +138,10 @@ public class PlayerController : MonoBehaviour
         rightClickUnpressed = Input.GetMouseButtonUp(1);
         rightClickHeldDown  = Input.GetMouseButton(1);
 
+        middleClickPressed = Input.GetMouseButtonDown(2);
+        middleClickUnpressed = Input.GetMouseButtonUp(2);
+        middleClickHeldDown = Input.GetMouseButton(2);
+        
         rotateButtonHeldDown = Input.GetButton("Space");
 
         mousePosition = Input.mousePosition;

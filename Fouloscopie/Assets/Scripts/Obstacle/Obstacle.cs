@@ -31,6 +31,8 @@ public class Obstacle : MonoBehaviour
     [SerializeField] 
     private float bounceSpeed = 10f;
 
+    private Animator m_animator;
+
     //  Public Variables
 
     public int cost = 25;
@@ -47,6 +49,7 @@ public class Obstacle : MonoBehaviour
 
     private void Awake()
     {
+        m_animator = GetComponent<Animator>();
         m_collider = GetComponentInChildren<Collider>();
 
         MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
@@ -247,5 +250,16 @@ public class Obstacle : MonoBehaviour
 
         //  Disable grabOffsetSet to avoid unwanted change in this obstacle position after the rotation
         m_grabOffsetSet = false;
+    }
+
+    public void StartDestroy()
+    {
+        //m_animator.SetTrigger("Destroy");
+        Destroy(gameObject);
+    }
+
+    public void Remove()
+    {
+        Destroy(gameObject);
     }
 }
