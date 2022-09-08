@@ -23,6 +23,8 @@ public class Dummy : MonoBehaviour
 
     [SerializeField] GameObject willDieSystem = null;
 
+    public bool isLeaving = false;
+
     float timeBeforeDeathChanceIncrease = 1f;
 
     public int deathIncreaseChance = 0;
@@ -77,7 +79,7 @@ public class Dummy : MonoBehaviour
     void SetMarketDestination()
     {
         animator.SetTrigger("Walk");
-        Transform destination = GameObject.FindGameObjectWithTag("target").transform;
+        Transform destination = WaveManager.Instance.GetNearestTarget(transform.position);
         agent.target = destination;
     }
 
@@ -100,9 +102,8 @@ public class Dummy : MonoBehaviour
 
     public void SetEntryAsDestination()
     {
-        // to change so that they try to reach the doors
-        if (spawnPos)
-            agent.target = spawnPos;
+        isLeaving = true;
+        agent.target = WaveManager.Instance.GetNearestEnd(transform.position);
     }
 
     IEnumerator InitializeDeathProtocol()
@@ -158,6 +159,7 @@ public class Dummy : MonoBehaviour
         GetComponent<AIPath>().enabled = false;
         GetComponent<Pathfinding.RVO.RVOController>().enabled = false;
         agent.enabled = false;
+        GameManager.diedDummies++;
         StartCoroutine(CorpseAnimation());
     }
 
@@ -202,5 +204,11 @@ public class Dummy : MonoBehaviour
         currentCollapsing--;
         if (currentCollapsing < 0) currentCollapsing = 0;
     }
+
+    public void Leave() 
+    {
+        GameManager.savedDummies++;
+        Destroy(gameObject);
+    }   
 }
 

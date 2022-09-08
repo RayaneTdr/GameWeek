@@ -38,6 +38,8 @@ public class WaveManager : MonoBehaviour
 
     public List<int> focusedSpawner = new List<int>(); // main spawner used
     public List<Spawner> spawners;
+    public List<Target> targets;
+    public List<End> ends;
 
     int waveIndex = -1;
 
@@ -61,8 +63,9 @@ public class WaveManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (cam.RaycastToMouse(out RaycastHit hit, LayerMask.GetMask("Floor")))
-                Instantiate(smokePrefab, hit.point, Quaternion.identity);
+                Instantiate(smokePrefab, new Vector3(hit.point.x, hit.point.y+ 0.855f, hit.point.z), Quaternion.identity);
         }
+        
         if (Input.GetKeyDown(KeyCode.P)) 
         {
             LaunchDistraction();
@@ -187,5 +190,47 @@ public class WaveManager : MonoBehaviour
         // may optimize this
         foreach (Dummy dummy in dummies)
             dummy.ResetPromotionDestination();
+    }
+
+    public Transform GetRandomTarget()
+    {
+        return targets[Random.Range(0, targets.Count)].transform;
+    }
+
+    public Transform GetNearestTarget(Vector3 position) 
+    {
+        float nearestDistance = float.MaxValue;
+        Transform nearest = null;
+        foreach (Target target in targets) 
+        {
+            float distance = (target.transform.position - position).magnitude;
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                nearest = target.transform;
+            }
+        }
+        return nearest;
+    }
+
+    public Transform GetRandomEnd()
+    {
+        return ends[Random.Range(0, ends.Count)].transform;
+    }
+
+    public Transform GetNearestEnd(Vector3 position)
+    {
+        float nearestDistance = float.MaxValue;
+        Transform nearest = null;
+        foreach (End end in ends)
+        {
+            float distance = (end.transform.position - position).magnitude;
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                nearest = end.transform;
+            }
+        }
+        return nearest;
     }
 }

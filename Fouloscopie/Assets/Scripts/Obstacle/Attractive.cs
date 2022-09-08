@@ -7,7 +7,7 @@ public class Attractive : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Dummy dummy)) 
+        if (other.TryGetComponent(out Dummy dummy) && dummy.isAttracted) 
         {
             dummy.StandAtPromotion();
         }
