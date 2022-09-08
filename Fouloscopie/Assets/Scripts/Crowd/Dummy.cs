@@ -23,6 +23,8 @@ public class Dummy : MonoBehaviour
 
     [SerializeField] GameObject willDieSystem = null;
 
+    SpatializedSource audio;
+
     public bool isLeaving = false;
 
     float timeBeforeDeathChanceIncrease = 1f;
@@ -39,6 +41,8 @@ public class Dummy : MonoBehaviour
     {
         agent = GetComponent<AIDestinationSetter>();
         animator = GetComponentInChildren<Animator>();
+        audio = GetComponent<SpatializedSource>();
+
         SetMarketDestination();
     }
 
@@ -156,9 +160,14 @@ public class Dummy : MonoBehaviour
         animator.SetTrigger("Death");
         onDieBroadcast.Invoke();
         alive = false;
+        
+        //Disable AI
         GetComponent<AIPath>().enabled = false;
         GetComponent<Pathfinding.RVO.RVOController>().enabled = false;
         agent.enabled = false;
+
+        audio.Play("CustomerDeath");
+
         GameManager.diedDummies++;
         StartCoroutine(CorpseAnimation());
     }
@@ -207,6 +216,7 @@ public class Dummy : MonoBehaviour
 
     public void Leave() 
     {
+        GameManager.Instance.audioManager.Play("CashMachine");   
         GameManager.savedDummies++;
         Destroy(gameObject);
     }   

@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
     #region SINGLETON
     static WaveManager instance = null;
     public static WaveManager Instance => instance;
+
+    public TextMeshProUGUI timeRenderer;
 
     public Transform promotionT;
     public float distractionTime = 10f;
@@ -88,6 +91,11 @@ public class WaveManager : MonoBehaviour
             if (!dirtyFlag)
                 LaunchWave();
         }
+
+        if (currentTime.y < 10f)
+            timeRenderer.text = currentTime.x + ":" +0+ (int)currentTime.y;
+        else
+            timeRenderer.text = currentTime.x + ":" + (int)currentTime.y;
     }
 
     public void LaunchWave()
@@ -182,6 +190,7 @@ public class WaveManager : MonoBehaviour
             dummies[Random.Range(0, dummies.Count)].SetPromotionDestination();
             countToAttract--;
         }
+        GameManager.Instance.audioManager.Play("BonusAlert");
         Invoke("ResetDistraction", distractionTime);
     }
 

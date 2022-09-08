@@ -6,16 +6,17 @@ using UnityEngine;
 public class SpatializedSource : MonoBehaviour
 {
     AudioSource source;
-    public string soundName = "";
-    
+
     public void Start()
     {
-        source = GetComponent<AudioSource>();
-        source.clip = GameManager.Instance.audioManager.GetClip(soundName);
+        source = GetComponent<AudioSource>();    
     }
 
-    public void Play() 
+    public void Play(string clip) 
     {
+        source = GetComponent<AudioSource>();
+        source.clip = GameManager.Instance.audioManager.GetClip(clip);
+
         source.Play();
     }
 

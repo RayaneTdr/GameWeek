@@ -2,16 +2,8 @@ using UnityEngine;
 
 public class UIScriptAudio : MonoBehaviour
 {
-    public void PlayButtonHovered()
+    public void PlayButtonClicked(string name)
     {
-        //Debug.Log("PLACEHOLDER : Make HOVER sound");
-        //GameManager.Instance.audioManager.Play("");
-    }
-
-
-    public void PlayButtonClicked()
-    {
-        Debug.Log("PLACEHOLDER : Make CLICK sound");
-        GameManager.Instance.audioManager.Play("ButtonClick");
+        GameManager.Instance.audioManager.Play(name);
     }
 }

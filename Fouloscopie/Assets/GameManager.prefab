@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6450492565292708035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6450492565292708033}
+  - component: {fileID: 6450492565292708034}
+  - component: {fileID: 6450492565292708032}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6450492565292708033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6450492565292708035}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 584.3761, y: 256.87857, z: -1.6888809}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6450492565292708034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6450492565292708035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f722633470f334aae8d6704d4a69df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 0}
+  audioManager: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 96caffa54ff77394a81d867fce49cc7c, type: 2}
+  isPaused: 0
+--- !u!114 &6450492565292708032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6450492565292708035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185f709769b1eda4dbedea97f6c65d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sounds:
+  - name: ButtonClick
+    clip:
+    - {fileID: 8300000, guid: 5c7255ffc7a491b48a99c7efc5e1350d, type: 3}
+    - {fileID: 8300000, guid: 98bab9b7383a3494dbc0f1c9a4bc423d, type: 3}
+    - {fileID: 8300000, guid: 0450f667446fbda4187b9d08934d86b8, type: 3}
+    - {fileID: 8300000, guid: 49bd9a4c105526d4f812653a764d7938, type: 3}
+    - {fileID: 8300000, guid: 6918139a6f710f841a1d129896138421, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 0
+  - name: CashMachine
+    clip:
+    - {fileID: 8300000, guid: 528b21faa013b4146bd88c7424f914f9, type: 3}
+    - {fileID: 8300000, guid: 05b8604a784647746a16b5847e4215ff, type: 3}
+    - {fileID: 8300000, guid: bc67ae11f47bc9a46a5ef0a1781b01dd, type: 3}
+    - {fileID: 8300000, guid: b7be02398551847409631030f6439f6b, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 0
+  - name: AlarmLoop
+    clip:
+    - {fileID: 8300000, guid: b1161bffdf03ad74691440240c21825f, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 1
+  - name: BonusAlert
+    clip:
+    - {fileID: 8300000, guid: 93df1593ec22dd0499d275a7682a7003, type: 3}
+    - {fileID: 8300000, guid: d3309bf35c6d4c845811947422aacf4b, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 0
+  - name: CheeseBox
+    clip:
+    - {fileID: 8300000, guid: ceacddeb5d1472143922844efe48a712, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 0
+  - name: CustomerDeath
+    clip:
+    - {fileID: 8300000, guid: 6ecdce9248dec9f498e4bdcf4a97121f, type: 3}
+    - {fileID: 8300000, guid: 61d3c4ed17d27f541aa50c5a7c252a65, type: 3}
+    - {fileID: 8300000, guid: 47cf18b5951d41442972002c35e0b879, type: 3}
+    - {fileID: 8300000, guid: 9a153a50d84f2fa4cac87e4a701b1296, type: 3}
+    - {fileID: 8300000, guid: 27ebdb6d6a30d514891031586e674659, type: 3}
+    - {fileID: 8300000, guid: 46079f9feb719a941810862c5a19e0ca, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 1
+  - name: Footsteps
+    clip:
+    - {fileID: 8300000, guid: 91f7d7be4af651e4da65b80d755ea15b, type: 3}
+    - {fileID: 8300000, guid: 67dfb40a32264d24aaffbd1d25c8b610, type: 3}
+    - {fileID: 8300000, guid: 0b963d8fd3625a64788e0899ebd8721b, type: 3}
+    - {fileID: 8300000, guid: 6792213c5840c624ba47ae83ec528e72, type: 3}
+    - {fileID: 8300000, guid: 02f1afcd3f13395408c249a8e892305c, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 0
+  - name: DoorOpen
+    clip:
+    - {fileID: 8300000, guid: 87bd4ab7a008aa84e8112aab899c98f2, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 1
+  - name: ButtonPlay
+    clip:
+    - {fileID: 8300000, guid: ce99b3ba4d76721448cfb51b46b23eec, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 0
+  - name: DoorClose
+    clip:
+    - {fileID: 8300000, guid: bf0509a2783b1a3468605391122f3256, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 0
+  - name: CustomerScream
+    clip:
+    - {fileID: 8300000, guid: 87b2aad0a430d44408ca8055242789aa, type: 3}
+    - {fileID: 8300000, guid: 8cf70f7adc1107c4f85ec65c5ae5d46f, type: 3}
+    - {fileID: 8300000, guid: 155c0e57fd38b4c4aab89f85bd21bb65, type: 3}
+    - {fileID: 8300000, guid: 8b832979e984f91429b4c446d6c08fee, type: 3}
+    - {fileID: 8300000, guid: 8780ef33a58064f4e9c4289ce88b6540, type: 3}
+    - {fileID: 8300000, guid: 72e5ffa93c978dd48ac1d980111cf341, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 1
+  - name: PizzaBox
+    clip:
+    - {fileID: 8300000, guid: 9e6496fb298d99241b65fa308e69e130, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 0
+  - name: MetalCan
+    clip:
+    - {fileID: 8300000, guid: 172f5c7b9a19c3b46a0f120bef46473c, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 0
+  - name: AlarmSecurity
+    clip:
+    - {fileID: 8300000, guid: f50e87db88df4a24f890f30d4c395a58, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 1
+  - name: SmokeBox
+    clip:
+    - {fileID: 8300000, guid: 8b46782d2727e0441a8268fea7ff956c, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 1
+  - name: BoxPickup
+    clip:
+    - {fileID: 8300000, guid: 6f12f49f180f86341ac1db4451617e48, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 0
+  - name: Escalator
+    clip:
+    - {fileID: 8300000, guid: b5cb35b8b8703bb4f9b924aa603f3924, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 1
+  - name: TicketPrint
+    clip:
+    - {fileID: 8300000, guid: 043211504f84f584aac2643c3ee48e05, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    spatialized: 0
