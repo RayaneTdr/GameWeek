@@ -511,10 +511,10 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 0450f667446fbda4187b9d08934d86b8, type: 3}
     - {fileID: 8300000, guid: 49bd9a4c105526d4f812653a764d7938, type: 3}
     - {fileID: 8300000, guid: 6918139a6f710f841a1d129896138421, type: 3}
-    - {fileID: 8300000, guid: ce99b3ba4d76721448cfb51b46b23eec, type: 3}
     group: {fileID: 0}
     volume: 0
     pitch: 0
+    spatialized: 0
     source: {fileID: 0}
   - name: CashMachine
     clip:
@@ -525,35 +525,34 @@ MonoBehaviour:
     group: {fileID: 0}
     volume: 0
     pitch: 0
+    spatialized: 0
     source: {fileID: 0}
-  - name: Alarm
+  - name: AlarmLoop
     clip:
     - {fileID: 8300000, guid: b1161bffdf03ad74691440240c21825f, type: 3}
-    - {fileID: 8300000, guid: f50e87db88df4a24f890f30d4c395a58, type: 3}
     group: {fileID: 0}
     volume: 0
     pitch: 0
+    spatialized: 1
     source: {fileID: 0}
   - name: BonusAlert
     clip:
     - {fileID: 8300000, guid: 93df1593ec22dd0499d275a7682a7003, type: 3}
+    - {fileID: 8300000, guid: d3309bf35c6d4c845811947422aacf4b, type: 3}
     group: {fileID: 0}
     volume: 0
     pitch: 0
+    spatialized: 0
     source: {fileID: 0}
-  - name: Items
+  - name: CheeseBox
     clip:
     - {fileID: 8300000, guid: ceacddeb5d1472143922844efe48a712, type: 3}
-    - {fileID: 8300000, guid: 9e6496fb298d99241b65fa308e69e130, type: 3}
-    - {fileID: 8300000, guid: 172f5c7b9a19c3b46a0f120bef46473c, type: 3}
-    - {fileID: 8300000, guid: 8b46782d2727e0441a8268fea7ff956c, type: 3}
-    - {fileID: 8300000, guid: d3309bf35c6d4c845811947422aacf4b, type: 3}
-    - {fileID: 8300000, guid: 6f12f49f180f86341ac1db4451617e48, type: 3}
     group: {fileID: 0}
     volume: 0
     pitch: 0
+    spatialized: 0
     source: {fileID: 0}
-  - name: Customer
+  - name: CustomerDeath
     clip:
     - {fileID: 8300000, guid: 6ecdce9248dec9f498e4bdcf4a97121f, type: 3}
     - {fileID: 8300000, guid: 61d3c4ed17d27f541aa50c5a7c252a65, type: 3}
@@ -561,6 +560,49 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 9a153a50d84f2fa4cac87e4a701b1296, type: 3}
     - {fileID: 8300000, guid: 27ebdb6d6a30d514891031586e674659, type: 3}
     - {fileID: 8300000, guid: 46079f9feb719a941810862c5a19e0ca, type: 3}
+    group: {fileID: 0}
+    volume: 0
+    pitch: 0
+    spatialized: 1
+    source: {fileID: 0}
+  - name: Footsteps
+    clip:
+    - {fileID: 8300000, guid: 91f7d7be4af651e4da65b80d755ea15b, type: 3}
+    - {fileID: 8300000, guid: 67dfb40a32264d24aaffbd1d25c8b610, type: 3}
+    - {fileID: 8300000, guid: 0b963d8fd3625a64788e0899ebd8721b, type: 3}
+    - {fileID: 8300000, guid: 6792213c5840c624ba47ae83ec528e72, type: 3}
+    - {fileID: 8300000, guid: 02f1afcd3f13395408c249a8e892305c, type: 3}
+    group: {fileID: 0}
+    volume: 0
+    pitch: 0
+    spatialized: 0
+    source: {fileID: 0}
+  - name: DoorOpen
+    clip:
+    - {fileID: 8300000, guid: 87bd4ab7a008aa84e8112aab899c98f2, type: 3}
+    group: {fileID: 0}
+    volume: 0
+    pitch: 0
+    spatialized: 1
+    source: {fileID: 0}
+  - name: ButtonPlay
+    clip:
+    - {fileID: 8300000, guid: ce99b3ba4d76721448cfb51b46b23eec, type: 3}
+    group: {fileID: 0}
+    volume: 0
+    pitch: 0
+    spatialized: 0
+    source: {fileID: 0}
+  - name: DoorClose
+    clip:
+    - {fileID: 8300000, guid: bf0509a2783b1a3468605391122f3256, type: 3}
+    group: {fileID: 0}
+    volume: 0
+    pitch: 0
+    spatialized: 0
+    source: {fileID: 0}
+  - name: CustomerScream
+    clip:
     - {fileID: 8300000, guid: 87b2aad0a430d44408ca8055242789aa, type: 3}
     - {fileID: 8300000, guid: 8cf70f7adc1107c4f85ec65c5ae5d46f, type: 3}
     - {fileID: 8300000, guid: 155c0e57fd38b4c4aab89f85bd21bb65, type: 3}
@@ -570,27 +612,55 @@ MonoBehaviour:
     group: {fileID: 0}
     volume: 0
     pitch: 0
+    spatialized: 1
     source: {fileID: 0}
-  - name: Footsteps
+  - name: PizzaBox
     clip:
-    - {fileID: 8300000, guid: f659cd75dfd28b1488ac883cd832d2a5, type: 3}
-    - {fileID: 8300000, guid: 91f7d7be4af651e4da65b80d755ea15b, type: 3}
-    - {fileID: 8300000, guid: 67dfb40a32264d24aaffbd1d25c8b610, type: 3}
-    - {fileID: 8300000, guid: 0b963d8fd3625a64788e0899ebd8721b, type: 3}
-    - {fileID: 8300000, guid: 6792213c5840c624ba47ae83ec528e72, type: 3}
-    - {fileID: 8300000, guid: 02f1afcd3f13395408c249a8e892305c, type: 3}
+    - {fileID: 8300000, guid: 9e6496fb298d99241b65fa308e69e130, type: 3}
     group: {fileID: 0}
     volume: 0
     pitch: 0
+    spatialized: 0
     source: {fileID: 0}
-  - name: Environment
+  - name: MetalCan
     clip:
-    - {fileID: 8300000, guid: 87bd4ab7a008aa84e8112aab899c98f2, type: 3}
-    - {fileID: 8300000, guid: bf0509a2783b1a3468605391122f3256, type: 3}
+    - {fileID: 8300000, guid: 172f5c7b9a19c3b46a0f120bef46473c, type: 3}
+    group: {fileID: 0}
+    volume: 0
+    pitch: 0
+    spatialized: 0
+    source: {fileID: 0}
+  - name: AlarmSecurity
+    clip:
+    - {fileID: 8300000, guid: f50e87db88df4a24f890f30d4c395a58, type: 3}
+    group: {fileID: 0}
+    volume: 0
+    pitch: 0
+    spatialized: 1
+    source: {fileID: 0}
+  - name: SmokeBox
+    clip:
+    - {fileID: 8300000, guid: 8b46782d2727e0441a8268fea7ff956c, type: 3}
+    group: {fileID: 0}
+    volume: 0
+    pitch: 0
+    spatialized: 1
+    source: {fileID: 0}
+  - name: BoxPickup
+    clip:
+    - {fileID: 8300000, guid: 6f12f49f180f86341ac1db4451617e48, type: 3}
+    group: {fileID: 0}
+    volume: 0
+    pitch: 0
+    spatialized: 0
+    source: {fileID: 0}
+  - name: Escalator
+    clip:
     - {fileID: 8300000, guid: b5cb35b8b8703bb4f9b924aa603f3924, type: 3}
     group: {fileID: 0}
     volume: 0
     pitch: 0
+    spatialized: 1
     source: {fileID: 0}
 --- !u!1 &1275435112
 GameObject:
