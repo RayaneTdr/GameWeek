@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1870448659733448802}
   - component: {fileID: 3340246712756963271}
   - component: {fileID: 702007362006512397}
+  - component: {fileID: 4574675105113613311}
   m_Layer: 0
   m_Name: "FBX_Bac_surgel\xE9s"
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4574675105113613311
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350793507387003608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 206.34, y: 110.82483, z: 206.34}
+  m_Center: {x: -0.000015258789, y: 55.412415, z: 0.0000038146973}
