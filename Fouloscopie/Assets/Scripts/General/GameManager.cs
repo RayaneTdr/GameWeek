@@ -4,8 +4,10 @@ using UnityEngine.Audio;
 public class GameManager : MonoBehaviour
 {
     [HideInInspector] public Settings settings;
+    [HideInInspector] public AudioManager audioManager;
     [HideInInspector] public AudioMixer audioMixer;
     [HideInInspector] public bool isPaused = false;
+
 
     #region SINGLETON
     static GameManager instance = null;
@@ -16,8 +18,10 @@ public class GameManager : MonoBehaviour
         if (!instance)
         {
             instance = this;
-            audioMixer = Resources.Load<AudioMixer>("MainMixer");
-            settings = gameObject.AddComponent<Settings>();
+
+            audioMixer   = Resources.Load<AudioMixer>("MainMixer");
+            audioManager = gameObject.GetComponent<AudioManager>();
+            settings     = gameObject.AddComponent<Settings>();
 
             DontDestroyOnLoad(gameObject);
 
@@ -38,4 +42,6 @@ public class GameManager : MonoBehaviour
         isPaused = false;
     }
 
+    public static int diedDummies  = 0;
+    public static int savedDummies = 0;
 }
