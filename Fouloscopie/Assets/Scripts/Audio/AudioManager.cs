@@ -10,15 +10,24 @@ public class AudioManager : MonoBehaviour
     {
         foreach(Sound s in m_sounds)
         {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.outputAudioMixerGroup = s.group;
-            s.source.volume = s.volume;
-            s.source.pitch  = s.pitch;
+            if (!s.spatialized)
+            {
+                s.source = gameObject.AddComponent<AudioSource>();
+                s.source.outputAudioMixerGroup = s.group;
+                s.source.volume = s.volume;
+                s.source.pitch = s.pitch;
+            }
         }
     }
 
     public void Play(string name)
     {
         Array.Find(m_sounds, sound => sound.name == name)?.Play();
+    }
+
+    public AudioClip GetClip(string name) 
+    {
+        Sound s = Array.Find(m_sounds, sound => sound.name == name);
+        return s.clip[UnityEngine.Random.Range(0, s.clip.Count)]; ;
     }
 }
