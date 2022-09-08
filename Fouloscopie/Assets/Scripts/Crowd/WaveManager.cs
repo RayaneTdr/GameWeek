@@ -8,6 +8,12 @@ public class WaveManager : MonoBehaviour
     static WaveManager instance = null;
     public static WaveManager Instance => instance;
 
+
+
+    // ----- TO REMOVE
+    PlayerCamera cam;
+    public GameObject smokePrefab;
+
     private void Awake()
     {
         if (!instance)
@@ -19,13 +25,13 @@ public class WaveManager : MonoBehaviour
 
     // x = hour, y = min
     [SerializeField] Vector2 startingTime = new Vector2(8f, 0f);
-    [SerializeField] float timeBetweenWaves = 10f;  // time in seconds between each wave ( every 30 min in game)
-    [SerializeField] int spawnChance = 10; //       1 / spawnchance
+    [SerializeField] float   timeBetweenWaves = 10f;  // time in seconds between each wave ( every 30 min in game)
+    [SerializeField] int     spawnChance = 10; //       1 / spawnchance
 
     [SerializeField] Vector2 currentTime = new Vector2(8f, 0f); // in game time
     public List<int> waves = new List<int>(); // number of dummies to spawn on waves
     
-    public List<int> focusedSpawner = new List<int>(); // main spawner used
+    public List<int>     focusedSpawner = new List<int>(); // main spawner used
     public List<Spawner> spawners;
 
     int waveIndex = -1;
@@ -34,12 +40,19 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
+        cam = FindObjectOfType<PlayerCamera>();
         currentTime = startingTime;
     }
 
     private void Update()
     {
         UpdateHour();
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (cam.RaycastToMouse(out RaycastHit hit, LayerMask.GetMask("Floor")))
+                Instantiate(smokePrefab, hit.point, Quaternion.identity);
+        }
     }
 
     public void UpdateHour()
