@@ -23,11 +23,6 @@ public class UIScriptPauseMenu : UIScriptOptions
         }
     }
 
-    public void Resume()
-    {
-        Close();
-    }
-
     public void Restart()
     {
         GameManager.Instance.Resume();
@@ -44,7 +39,7 @@ public class UIScriptPauseMenu : UIScriptOptions
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            Resume();
+            Close();
         }
     }
 }
