@@ -2864,7 +2864,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 183636851371301880}
         m_TargetAssemblyTypeName: UIScriptPauseMenu, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
