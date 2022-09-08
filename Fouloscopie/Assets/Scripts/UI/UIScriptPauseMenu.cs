@@ -5,24 +5,26 @@ public class UIScriptPauseMenu : UIScriptOptions
 {
     [SerializeField] private PlayerController player;
 
-    private bool m_isOpen = false;
-    private bool m_wasOpen = false;
-
     public void Open()
     {
-        m_animator.SetTrigger("Open");
-        m_isOpen = true;
+        if (!m_isOpen)
+        {
+            GameManager.Instance.Pause();
+            m_animator.SetTrigger("Open");
+        }
     }
 
     public void Close()
     {
-        m_animator.SetTrigger("Close");
-        m_isOpen = false;
+        if (m_isOpen)
+        {
+            GameManager.Instance.Resume();
+            m_animator.SetTrigger("Close");
+        }
     }
 
     public void Resume()
     {
-        GameManager.Instance.Resume();
         Close();
     }
 
@@ -40,11 +42,9 @@ public class UIScriptPauseMenu : UIScriptOptions
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && m_wasOpen && m_isOpen)
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             Resume();
         }
-
-        m_wasOpen = m_isOpen;
     }
 }

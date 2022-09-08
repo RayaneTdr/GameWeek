@@ -1196,6 +1196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe47af6aa21a7c4a85ae8f14720269b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_scene: GameMap
 --- !u!1001 &4643633918711213882
 PrefabInstance:
   m_ObjectHideFlags: 0

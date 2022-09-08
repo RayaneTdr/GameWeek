@@ -85,7 +85,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 696920149465344748}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -142,6 +142,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 780237216371286332}
     m_Modifications:
+    - target: {fileID: 15194372769149148, guid: cb7ce9c80cf0ddf4eb19b1ce282b8474,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 174.20001
+      objectReference: {fileID: 0}
     - target: {fileID: 183636851371301880, guid: cb7ce9c80cf0ddf4eb19b1ce282b8474,
         type: 3}
       propertyPath: player
@@ -292,8 +297,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5292703266962933482, guid: cb7ce9c80cf0ddf4eb19b1ce282b8474,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -220.99997
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb7ce9c80cf0ddf4eb19b1ce282b8474, type: 3}
+--- !u!114 &458979077857827204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 183636851371301880, guid: cb7ce9c80cf0ddf4eb19b1ce282b8474,
+    type: 3}
+  m_PrefabInstance: {fileID: 347612475113669244}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360e52bd7e753124a9a06bb906ba1061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3157787416488268169 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3386778769776595957, guid: cb7ce9c80cf0ddf4eb19b1ce282b8474,
@@ -311,7 +333,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_pauseMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 458979077857827204}
     - target: {fileID: 249950551954629530, guid: 1a2eb5f7282de57488d411c43481d533,
         type: 3}
       propertyPath: m_back

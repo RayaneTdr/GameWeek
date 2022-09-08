@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
         {
             if (!GameManager.Instance.isPaused)
             {
-                GameManager.Instance.Pause(); 
                 m_pauseMenu.Open();
             }
         }

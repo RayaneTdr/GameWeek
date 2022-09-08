@@ -101,6 +101,7 @@ public class Obstacle : MonoBehaviour
             m_collider.isTrigger = false;
             isNew = false;
             m_isGrabbed = false;
+            AstarPath.active.Scan();
 
             return true;
         }
@@ -114,6 +115,7 @@ public class Obstacle : MonoBehaviour
             m_collider.isTrigger = false;
             isNew = false;
             m_isGrabbed = false;
+            AstarPath.active.Scan();
 
             return false;
         }
