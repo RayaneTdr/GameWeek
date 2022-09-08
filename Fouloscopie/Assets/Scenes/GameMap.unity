@@ -588,6 +588,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6480177055640807983, guid: 526b83a699c25d543b20eae6d25e89da,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a66c61a33163bbb47b7cd6118f725d0d, type: 2}
     - target: {fileID: 7581737283502582644, guid: 526b83a699c25d543b20eae6d25e89da,
         type: 3}
       propertyPath: m_Layer
@@ -3044,6 +3049,29 @@ Transform:
   m_Father: {fileID: 1086445153}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &591488266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 696920149465344750, guid: fb17367440f54f74bb54c8d0b220c3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 869044818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &591488268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591488266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
 --- !u!1001 &630835882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4331,7 +4359,7 @@ PrefabInstance:
     - target: {fileID: 3157787417519933378, guid: fb17367440f54f74bb54c8d0b220c3f9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -67.12149
+      value: -67.12152
       objectReference: {fileID: 0}
     - target: {fileID: 4423973436142242396, guid: fb17367440f54f74bb54c8d0b220c3f9,
         type: 3}
@@ -5423,6 +5451,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6480177055640807983, guid: 526b83a699c25d543b20eae6d25e89da,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7feb562a4adf1b1478bb5f330bd7ca7e, type: 2}
     - target: {fileID: 7581737283502582644, guid: 526b83a699c25d543b20eae6d25e89da,
         type: 3}
       propertyPath: m_Layer
