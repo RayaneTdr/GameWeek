@@ -29,11 +29,12 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public bool rotateButtonHeldDown;
     [HideInInspector] public bool pause;
+    [HideInInspector] public bool freezeGrabMovement;
 
     //public float screenPercent = 0.05f;
     //[HideInInspector] public Vector2 cameraMovement;
 
-    public int actionPoint = 100;
+    public int obstacleLimit = 5;
 
     // MonoBehaviour Functions
 
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
         deltaMouse = m_oldMousePos - mousePos;
         m_oldMousePos = mousePos;
-
+        cameraGrabMovement = Vector2.zero;
 
         /*
         
@@ -92,10 +93,11 @@ public class PlayerController : MonoBehaviour
             m_isGrabbing = true;
         }
 
+        if (freezeGrabMovement) m_isGrabbing = false;
+
         if (m_isGrabbing)
         {
             cameraGrabMovement = deltaMouse;
-            //cameraMovement = Vector2.zero;
 
             m_isGrabbing = !leftClickUnpressed;
         }
