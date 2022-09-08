@@ -511,7 +511,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 0450f667446fbda4187b9d08934d86b8, type: 3}
     - {fileID: 8300000, guid: 49bd9a4c105526d4f812653a764d7938, type: 3}
     - {fileID: 8300000, guid: 6918139a6f710f841a1d129896138421, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 0
@@ -522,7 +523,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 05b8604a784647746a16b5847e4215ff, type: 3}
     - {fileID: 8300000, guid: bc67ae11f47bc9a46a5ef0a1781b01dd, type: 3}
     - {fileID: 8300000, guid: b7be02398551847409631030f6439f6b, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 0
@@ -530,7 +532,8 @@ MonoBehaviour:
   - name: AlarmLoop
     clip:
     - {fileID: 8300000, guid: b1161bffdf03ad74691440240c21825f, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 1
@@ -539,7 +542,8 @@ MonoBehaviour:
     clip:
     - {fileID: 8300000, guid: 93df1593ec22dd0499d275a7682a7003, type: 3}
     - {fileID: 8300000, guid: d3309bf35c6d4c845811947422aacf4b, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 0
@@ -547,7 +551,8 @@ MonoBehaviour:
   - name: CheeseBox
     clip:
     - {fileID: 8300000, guid: ceacddeb5d1472143922844efe48a712, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 0
@@ -560,7 +565,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 9a153a50d84f2fa4cac87e4a701b1296, type: 3}
     - {fileID: 8300000, guid: 27ebdb6d6a30d514891031586e674659, type: 3}
     - {fileID: 8300000, guid: 46079f9feb719a941810862c5a19e0ca, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 1
@@ -572,7 +578,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 0b963d8fd3625a64788e0899ebd8721b, type: 3}
     - {fileID: 8300000, guid: 6792213c5840c624ba47ae83ec528e72, type: 3}
     - {fileID: 8300000, guid: 02f1afcd3f13395408c249a8e892305c, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 0
@@ -580,7 +587,8 @@ MonoBehaviour:
   - name: DoorOpen
     clip:
     - {fileID: 8300000, guid: 87bd4ab7a008aa84e8112aab899c98f2, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 1
@@ -588,7 +596,8 @@ MonoBehaviour:
   - name: ButtonPlay
     clip:
     - {fileID: 8300000, guid: ce99b3ba4d76721448cfb51b46b23eec, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 0
@@ -596,7 +605,8 @@ MonoBehaviour:
   - name: DoorClose
     clip:
     - {fileID: 8300000, guid: bf0509a2783b1a3468605391122f3256, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 0
@@ -609,7 +619,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 8b832979e984f91429b4c446d6c08fee, type: 3}
     - {fileID: 8300000, guid: 8780ef33a58064f4e9c4289ce88b6540, type: 3}
     - {fileID: 8300000, guid: 72e5ffa93c978dd48ac1d980111cf341, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 1
@@ -617,7 +628,8 @@ MonoBehaviour:
   - name: PizzaBox
     clip:
     - {fileID: 8300000, guid: 9e6496fb298d99241b65fa308e69e130, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 0
@@ -625,7 +637,8 @@ MonoBehaviour:
   - name: MetalCan
     clip:
     - {fileID: 8300000, guid: 172f5c7b9a19c3b46a0f120bef46473c, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 0
@@ -633,7 +646,8 @@ MonoBehaviour:
   - name: AlarmSecurity
     clip:
     - {fileID: 8300000, guid: f50e87db88df4a24f890f30d4c395a58, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 1
@@ -641,7 +655,8 @@ MonoBehaviour:
   - name: SmokeBox
     clip:
     - {fileID: 8300000, guid: 8b46782d2727e0441a8268fea7ff956c, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 1
@@ -649,7 +664,8 @@ MonoBehaviour:
   - name: BoxPickup
     clip:
     - {fileID: 8300000, guid: 6f12f49f180f86341ac1db4451617e48, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 0
@@ -657,10 +673,20 @@ MonoBehaviour:
   - name: Escalator
     clip:
     - {fileID: 8300000, guid: b5cb35b8b8703bb4f9b924aa603f3924, type: 3}
-    group: {fileID: 0}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
     volume: 0
     pitch: 0
     spatialized: 1
+    source: {fileID: 0}
+  - name: TicketPrint
+    clip:
+    - {fileID: 8300000, guid: 043211504f84f584aac2643c3ee48e05, type: 3}
+    group: {fileID: -3514810506043745621, guid: 96caffa54ff77394a81d867fce49cc7c,
+      type: 2}
+    volume: 0
+    pitch: 0.1
+    spatialized: 0
     source: {fileID: 0}
 --- !u!1 &1275435112
 GameObject:
