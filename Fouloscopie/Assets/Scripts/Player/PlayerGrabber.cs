@@ -185,4 +185,10 @@ public class PlayerGrabber : MonoBehaviour
     {
         return !m_selected && !m_repulsive;
     }
+
+    
+    public int GetObstacleCount()
+    {
+        return m_obstacles.Count;
+    }
 }
