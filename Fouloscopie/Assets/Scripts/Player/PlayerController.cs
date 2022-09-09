@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public bool rotateButtonHeldDown;
     [HideInInspector] public bool pause;
-    [HideInInspector] public bool freezeGrabMovement;
+    public bool freezeGrabMovement;
 
     //public float screenPercent = 0.05f;
     //[HideInInspector] public Vector2 cameraMovement;

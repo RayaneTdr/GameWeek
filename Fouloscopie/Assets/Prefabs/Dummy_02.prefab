@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6004055996872043614}
   - component: {fileID: 1449354960731879829}
   - component: {fileID: 1495352555991860619}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bowtie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4744647104905695900}
   - component: {fileID: 4736563132721375432}
   - component: {fileID: 7327901998071326610}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Exclamation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 2493858674140288671}
   - component: {fileID: 6964685859231772537}
   - component: {fileID: 7855757016626736510}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 443851357591614646}
   - component: {fileID: 1477202551524648245}
   - component: {fileID: 7978822390540523960}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 4043726562516078547}
   - component: {fileID: 779770422229462365}
   - component: {fileID: -4294464161179134588}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dummy_02
   m_TagString: dummy
   m_Icon: {fileID: 0}
@@ -817,7 +817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1495509180722768648}
   - component: {fileID: 1721361850671159370}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -873,7 +873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5671699827902254161}
   - component: {fileID: 6230382537868477261}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body_Parts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,7 +931,7 @@ GameObject:
   - component: {fileID: 4767908679589203164}
   - component: {fileID: 2526357922596743840}
   - component: {fileID: 4347068078008503400}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1014,7 +1014,7 @@ GameObject:
   - component: {fileID: 5688044985178197740}
   - component: {fileID: 6233677267073846014}
   - component: {fileID: 5828352709744265115}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1097,7 +1097,7 @@ GameObject:
   - component: {fileID: 2670907064369783077}
   - component: {fileID: 6390465384836022305}
   - component: {fileID: 1013371305371597846}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1180,7 +1180,7 @@ GameObject:
   - component: {fileID: 8180949097335983735}
   - component: {fileID: 1774807964077714351}
   - component: {fileID: 7778124996595676011}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1263,7 +1263,7 @@ GameObject:
   - component: {fileID: 811919655757670295}
   - component: {fileID: 660444229701219570}
   - component: {fileID: 4567711996219119710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1346,7 +1346,7 @@ GameObject:
   - component: {fileID: 4006087074538766419}
   - component: {fileID: 3435038475845203879}
   - component: {fileID: 4230721957392415849}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle Will Die
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6217,7 +6217,7 @@ GameObject:
   - component: {fileID: 2790077973879085698}
   - component: {fileID: 7554473440242619618}
   - component: {fileID: 7620546808879183290}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6298,7 +6298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6943463107182793057}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6389,6 +6389,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Walk_Smoke
       objectReference: {fileID: 0}
+    - target: {fileID: 1011845342250388517, guid: 581c9ca3e6966b243bf29d205a671534,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 581c9ca3e6966b243bf29d205a671534, type: 3}
 --- !u!4 &7369197480133461398 stripped
@@ -6463,6 +6468,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Death_FX
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040255585872965624, guid: 27a6d4f11f9ffbb4bab67418997fc2b8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6126040422917072185, guid: 27a6d4f11f9ffbb4bab67418997fc2b8,
         type: 3}
