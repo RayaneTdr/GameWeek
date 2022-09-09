@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Attractive : Obstacle
 {
+
+    public GameObject FX;
+    public GameObject Chrono;
+
     private new void Awake()
     {
         base.Awake();
@@ -26,8 +30,11 @@ public class Attractive : Obstacle
         if(base.Drop())
         {
             WaveManager.Instance.promotionT = transform;
-                WaveManager.Instance.LaunchDistraction();
+            WaveManager.Instance.LaunchDistraction();
 
+            FX.SetActive(true);
+            Chrono.SetActive(true);
+            GameManager.Instance.audioManager.Play("BonusAlert");        
             return true;
         }
 

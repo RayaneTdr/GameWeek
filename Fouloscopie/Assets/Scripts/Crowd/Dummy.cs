@@ -25,6 +25,8 @@ public class Dummy : MonoBehaviour
 
     SpatializedSource sound;
 
+    public GameObject decal;
+
     public bool isLeaving = false;
 
     float timeBeforeDeathChanceIncrease = 1f;
@@ -170,6 +172,10 @@ public class Dummy : MonoBehaviour
 
         GameManager.diedDummies++;
         StartCoroutine(CorpseAnimation());
+
+        // sortie 
+        decal.SetActive(true); 
+        decal.transform.parent = null;
     }
 
     IEnumerator CorpseAnimation()
