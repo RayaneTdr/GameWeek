@@ -8,6 +8,7 @@ public class Obstacle : MonoBehaviour
     private int m_obstructionCount = 0;
     private bool m_canBePlaced = false;
     private bool m_isGrabbed = false;
+    public bool isMovable = true;
 
     private Collider m_collider;
     private Vector3    m_savedPosition;
@@ -47,7 +48,7 @@ public class Obstacle : MonoBehaviour
 
     //  Monobehaviour Functions
 
-    private void Awake()
+    protected void Awake()
     {
         m_animator = GetComponent<Animator>();
         m_collider = GetComponentInChildren<Collider>();
@@ -160,7 +161,7 @@ public class Obstacle : MonoBehaviour
         }
     }
 
-    public bool Drop()
+    public virtual bool Drop()
     {
         m_grabOffsetSet = false;
         m_grabOffset    = Vector3.zero;
@@ -189,9 +190,22 @@ public class Obstacle : MonoBehaviour
 
             success = true;
         }
+        else
+        {
+            AbortDrag();
+        }
 
-        //  If is not new and has saved positions
-        else if (!isNew)
+        m_obstructionCount = 0;
+        m_dummiesInPreviewZone.Clear();
+
+        return success;
+    }
+
+
+    public void AbortDrag()
+    {
+        //  If is not new and has saved positions and reset materials
+        if (!isNew)
         {
             transform.position = m_savedPosition;
             transform.rotation = m_savedRotation;
@@ -207,22 +221,14 @@ public class Obstacle : MonoBehaviour
                 r.materials = m_defaultMaterials[i];
                 i++;
             }
-
-            success = false;
         }
         //  Else it can only be a new obstacle which can't be placed
         else
         {
             Destroy(gameObject);
-
-            success = false;
         }
-
-        m_obstructionCount = 0;
-        m_dummiesInPreviewZone.Clear();
-
-        return success;
     }
+
 
     public void Grab()
     {
@@ -234,7 +240,7 @@ public class Obstacle : MonoBehaviour
         }
 
         //  Set to trigger for grab and drop checks
-        m_collider.isTrigger = true;
+        m_collider.isTrigger = true; 
 
         //  The obstacle is now considered as grabbed
         m_isGrabbed = true;
