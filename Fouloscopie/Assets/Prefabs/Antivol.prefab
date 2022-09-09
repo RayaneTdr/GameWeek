@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2968166443134307522}
   - component: {fileID: 1069038587973056520}
   - component: {fileID: 8712250061811017634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Antivol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
