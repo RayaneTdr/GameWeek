@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   col: {fileID: 0}
-  time: 15
+  time: 10
   radius: 2.5
 --- !u!1 &5293295647755257195
 GameObject:
@@ -986,7 +986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7455339946242133984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.9, z: -0.046936}
+  m_LocalPosition: {x: 1.78, y: -0.50001, z: -1.8}
   m_LocalScale: {x: 0.6818, y: 0.6818, z: 0.6818}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1006,7 +1006,7 @@ Animator:
   m_GameObject: {fileID: 7455339946242133984}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9d67fadba6e82f64992ad97732cb65eb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 500bbc53897e3d64385f460887af7c49, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

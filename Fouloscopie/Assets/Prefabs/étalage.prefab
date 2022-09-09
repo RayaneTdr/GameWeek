@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1227650010361494847}
-  - component: {fileID: 2629496478004336335}
   - component: {fileID: 5951543012539442621}
   m_Layer: 6
   m_Name: "\xE9talage"
@@ -34,18 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 181.911, z: 0}
---- !u!114 &2629496478004336335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892265569498539909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15cb8a2015867964ab1551f04f5ceef2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &5951543012539442621
 MeshCollider:
   m_ObjectHideFlags: 0
