@@ -178,8 +178,12 @@ MonoBehaviour:
   rightClickPressed: 0
   rightClickUnpressed: 0
   rightClickHeldDown: 0
+  middleClickPressed: 0
+  middleClickUnpressed: 0
+  middleClickHeldDown: 0
   rotateButtonHeldDown: 0
   pause: 0
+  freezeGrabMovement: 0
   obstacleLimit: 5
 --- !u!114 &249950551954629530
 MonoBehaviour:
@@ -198,7 +202,7 @@ MonoBehaviour:
   m_maxZoom: 0.1
   m_offset: -50
   m_zoomStep: 25
-  m_zoomSpeed: 0.015
+  m_zoomSpeed: 0.025
   m_left: -100
   m_right: 100
   m_back: -100
@@ -206,7 +210,6 @@ MonoBehaviour:
   m_movementSpeed: 25
   m_rotationSpeed: 25
   cameraComponent: {fileID: 0}
-  freezeGrabMovements: 0
 --- !u!114 &249950551954629525
 MonoBehaviour:
   m_ObjectHideFlags: 0

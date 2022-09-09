@@ -37,8 +37,6 @@ public class Obstacle : MonoBehaviour
 
     //  Public Variables
 
-    public int cost = 25;
-
     [HideInInspector] 
     public bool isNew = true;
 
@@ -66,12 +64,12 @@ public class Obstacle : MonoBehaviour
         m_floorLayerMask = LayerMask.GetMask("Floor");
     }
 
-    private void Start()
+    protected void Start()
     {
         m_collider.isTrigger = true;
     }
 
-    void Update()
+    protected void Update()
     {
 
         bool couldBePLaced = m_canBePlaced;
@@ -110,35 +108,41 @@ public class Obstacle : MonoBehaviour
 
     //  Trigger Events Functions
 
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Obstacle") || other.CompareTag("Prop"))
+        if (m_isGrabbed)
         {
-            m_obstructionCount++;
-        }
-        else if(other.CompareTag("dummy"))
-        {
-            if (other.gameObject.TryGetComponent(out Dummy dummy))
+            if (other.CompareTag("Obstacle") || other.CompareTag("Prop"))
             {
-                m_dummiesInPreviewZone.Add(dummy);
+                m_obstructionCount++;
+            }
+            else if (other.CompareTag("dummy"))
+            {
+                if (other.gameObject.TryGetComponent(out Dummy dummy))
+                {
+                    m_dummiesInPreviewZone.Add(dummy);
+                }
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Obstacle") || other.CompareTag("Prop"))
+        if (m_isGrabbed)
         {
-            //  Teleporting a collider which is inside the trigger won't trigger the OnTriggerExit.
-            //  To avoid this problem we reset obstruction count to 0 in the Drop() function.
-            //  Here, to avoid this variable to go beneath 0, we limit over 0.
-            m_obstructionCount = Mathf.Max(0, m_obstructionCount - 1);
-        }
-        else if (other.CompareTag("dummy"))
-        {
-            if (other.gameObject.TryGetComponent(out Dummy dummy))
+            if (other.CompareTag("Obstacle") || other.CompareTag("Prop"))
             {
-                m_dummiesInPreviewZone.Remove(dummy);
+                //  Teleporting a collider which is inside the trigger won't trigger the OnTriggerExit.
+                //  To avoid this problem we reset obstruction count to 0 in the Drop() function.
+                //  Here, to avoid this variable to go beneath 0, we limit over 0.
+                m_obstructionCount = Mathf.Max(0, m_obstructionCount - 1);
+            }
+            else if (other.CompareTag("dummy"))
+            {
+                if (other.gameObject.TryGetComponent(out Dummy dummy))
+                {
+                    m_dummiesInPreviewZone.Remove(dummy);
+                }
             }
         }
     }

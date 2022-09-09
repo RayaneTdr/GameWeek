@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 4617739851885046715}
   - component: {fileID: 8150359755532074344}
   - component: {fileID: 7431039338852287856}
+  - component: {fileID: 7631846372628254277}
   m_Layer: 5
   m_Name: bouton_5
   m_TagString: Untagged
@@ -294,7 +295,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6999955110344699155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7631846372628254277}
+        m_TargetAssemblyTypeName: ObstacleUI, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7631846372628254277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3513438971902526025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39b21a7a7839134298bc891acb13ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_originalPrefab: {fileID: 9157657656999487331, guid: 2bac97043eaa1d94482fe065149dec1e,
+    type: 3}
+  m_grabber: {fileID: 0}
+  m_player: {fileID: 0}
 --- !u!1 &6999955108809645128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,7 +1086,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6999955109628488794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,7 +1348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39b21a7a7839134298bc891acb13ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_originalPrefab: {fileID: 0}
+  m_originalPrefab: {fileID: 9157657656999487331, guid: 4db58c1428116884fb5a9a1b32dc0ffc,
+    type: 3}
   m_grabber: {fileID: 0}
   m_player: {fileID: 0}
 --- !u!1 &6999955109836708980
@@ -1690,7 +1720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39b21a7a7839134298bc891acb13ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_originalPrefab: {fileID: 0}
+  m_originalPrefab: {fileID: 9157657656999487331, guid: c333d10f39d44824ea784b545636eeb6,
+    type: 3}
   m_grabber: {fileID: 0}
   m_player: {fileID: 0}
 --- !u!1 &6999955109991040619
@@ -2040,7 +2071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39b21a7a7839134298bc891acb13ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_originalPrefab: {fileID: 4763086127987888644, guid: ea2df52f6826a04428e334fdd721ebd9,
+  m_originalPrefab: {fileID: 9157657656999487331, guid: c6cc0e1c93e45b8418b132aaef6fd925,
     type: 3}
   m_grabber: {fileID: 0}
   m_player: {fileID: 0}
@@ -2129,7 +2160,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6999955110812446890
 MonoBehaviour:
   m_ObjectHideFlags: 0

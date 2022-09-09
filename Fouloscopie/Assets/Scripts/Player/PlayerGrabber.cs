@@ -18,6 +18,9 @@ public class PlayerGrabber : MonoBehaviour
     private bool m_holdDrag = true;
     private List<Obstacle> m_obstacles = new List<Obstacle>();
 
+    [SerializeField, Range(0.1f, 100f)]
+    private float m_rotationSpeed = 10f;
+
     // MonoBehaviour Functions
 
     void Awake()
@@ -38,7 +41,7 @@ public class PlayerGrabber : MonoBehaviour
             //  Rotate if rotation button is pressed
             if(m_playerController.rotateButtonHeldDown)
             {
-                m_selected.Rotate(m_playerController.deltaMouse.x);
+                m_selected.Rotate(m_playerController.deltaMouse.x * m_rotationSpeed);
             }
 
             //  Else follow the cursor
