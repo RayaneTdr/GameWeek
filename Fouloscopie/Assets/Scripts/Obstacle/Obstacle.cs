@@ -72,7 +72,6 @@ public class Obstacle : MonoBehaviour
 
     protected void Update()
     {
-
         bool couldBePLaced = m_canBePlaced;
 
         m_canBePlaced = m_obstructionCount == 0 && Physics.Raycast(transform.position + m_offsetOrigin * Vector3.up, Vector3.down, 100f, m_floorLayerMask);

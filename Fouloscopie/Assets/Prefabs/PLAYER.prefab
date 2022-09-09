@@ -360,6 +360,11 @@ PrefabInstance:
       propertyPath: m_right
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 249950551954629530, guid: 1a2eb5f7282de57488d411c43481d533,
+        type: 3}
+      propertyPath: m_grabMovementSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 249950551954629531, guid: 1a2eb5f7282de57488d411c43481d533,
         type: 3}
       propertyPath: m_RootOrder
