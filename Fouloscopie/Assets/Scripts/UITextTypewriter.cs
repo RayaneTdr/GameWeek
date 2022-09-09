@@ -16,7 +16,6 @@ public class UITextTypewriter : MonoBehaviour
     public float delayAfterPunctuation = 0.5f;
     private string story;
     private float originDelayBetweenChars;
-    private bool lastCharPunctuation = false;
     private char charComma;
     private char charPeriod;
     private char charEmpty;
@@ -78,17 +77,9 @@ public class UITextTypewriter : MonoBehaviour
         {
             delayBetweenChars = originDelayBetweenChars;
 
-            if (lastCharPunctuation)  //If previous character was a comma/period, pause typing
-            {
-                if (useAudio) TyppingFX.Pause();
-                yield return new WaitForSeconds(delayBetweenChars = delayAfterPunctuation);
-                lastCharPunctuation = false;
-            }
-
             if (c == charEmpty || c == charComma || c == charPeriod)
             {
                 if (useAudio) TyppingFX.Pause();
-                lastCharPunctuation = true;
             }
 
             if (useAudio) TyppingFX.PlayOneShot(TyppingFX.clip, volume);

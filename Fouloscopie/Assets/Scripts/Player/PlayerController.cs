@@ -33,10 +33,12 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public bool rotateButtonHeldDown;
     [HideInInspector] public bool pause;
-    [HideInInspector] public bool freezeGrabMovement;
+    public bool freezeGrabMovement;
 
     //public float screenPercent = 0.05f;
     //[HideInInspector] public Vector2 cameraMovement;
+
+    private const float deltaMouseFactor = 100f;
 
     public int obstacleLimit = 5;
 
@@ -54,9 +56,9 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        Vector2 mousePos = Input.mousePosition;
+        Vector2 mousePos = Input.mousePosition / new Vector2(Screen.width, Screen.height);
 
-        deltaMouse = m_oldMousePos - mousePos;
+        deltaMouse = (m_oldMousePos - mousePos) * deltaMouseFactor;
         m_oldMousePos = mousePos;
         cameraGrabMovement = Vector2.zero;
 

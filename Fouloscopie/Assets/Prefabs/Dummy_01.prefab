@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6407669015511088992}
   - component: {fileID: 2279675401692490411}
   - component: {fileID: 2269430626032686773}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bowtie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2269587396475287606}
   - component: {fileID: 2043980437447363444}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3996389102530874934}
   - component: {fileID: 7376902255132543694}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body_Parts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 2965017114435683745}
   - component: {fileID: 7717380821694168135}
   - component: {fileID: 7402630782916607552}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 7991333792947317247}
   - component: {fileID: 4612742602347169425}
   - component: {fileID: 8223197483391886353}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dummy_01
   m_TagString: dummy
   m_Icon: {fileID: 0}
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 979194742835160968}
   - component: {fileID: 2251307230766921227}
   - component: {fileID: 7279035994120505990}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +813,7 @@ GameObject:
   - component: {fileID: 6885243526773235996}
   - component: {fileID: 1107653003501523044}
   - component: {fileID: 8486749523058625180}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Exclamation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -930,7 +930,7 @@ GameObject:
   - component: {fileID: 5302196593865695202}
   - component: {fileID: 2932196568231803294}
   - component: {fileID: 4030105364038885206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1013,7 +1013,7 @@ GameObject:
   - component: {fileID: 4995005306165599698}
   - component: {fileID: 6718337554456861120}
   - component: {fileID: 6583237857281971365}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1096,7 +1096,7 @@ GameObject:
   - component: {fileID: 3363867630528868891}
   - component: {fileID: 5985656036686091039}
   - component: {fileID: 409295188535766824}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1179,7 @@ GameObject:
   - component: {fileID: 70554267191866537}
   - component: {fileID: 185899500638840780}
   - component: {fileID: 3809457902345931616}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1262,7 +1262,7 @@ GameObject:
   - component: {fileID: 8806434785687739721}
   - component: {fileID: 1377906236119251089}
   - component: {fileID: 6939870425755672661}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1345,7 +1345,7 @@ GameObject:
   - component: {fileID: 322490425753690358}
   - component: {fileID: 3760773104843525574}
   - component: {fileID: 7638181852632128651}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle Will Die
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6216,7 +6216,7 @@ GameObject:
   - component: {fileID: 3244409473442793916}
   - component: {fileID: 7163201204015908828}
   - component: {fileID: 7097588255779382916}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6297,7 +6297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7773792343976903263}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6387,6 +6387,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Walk_Smoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011845342250388517, guid: 581c9ca3e6966b243bf29d205a671534,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 581c9ca3e6966b243bf29d205a671534, type: 3}

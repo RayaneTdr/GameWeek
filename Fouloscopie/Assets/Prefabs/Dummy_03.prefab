@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1968884822972697099}
   - component: {fileID: 7416702817331669775}
   - component: {fileID: 3481883219926374200}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8119404386764498370}
   - component: {fileID: 7548153853560545744}
   - component: {fileID: 7971479550718356661}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Left_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 8964720914500364274}
   - component: {fileID: 2111476460118786446}
   - component: {fileID: 149171708623234886}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3063301170848415782}
   - component: {fileID: 2999842627530814308}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Chara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 402548942805623113}
   - component: {fileID: 6823196427812857008}
   - component: {fileID: 2998769275991960819}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Dummy_03
   m_TagString: dummy
   m_Icon: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 4065332055758020504}
   - component: {fileID: 3081032132710682139}
   - component: {fileID: 5834533381882016406}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 2078942026850450865}
   - component: {fileID: 6838044649179284567}
   - component: {fileID: 6000858353351525968}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Right_Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -922,7 +922,7 @@ GameObject:
   - component: {fileID: 7858962340660184944}
   - component: {fileID: 3053213129123697339}
   - component: {fileID: 3063180813424897701}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Bowtie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1003,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6781919017768368719}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Hands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1038,7 +1038,7 @@ GameObject:
   - component: {fileID: 6342954568873848504}
   - component: {fileID: 6342954568873848507}
   - component: {fileID: 6342954568873848506}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Walk_Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5859,7 +5859,7 @@ GameObject:
   - component: {fileID: 1799835255252840876}
   - component: {fileID: 6238879750516735948}
   - component: {fileID: 6306037220467760788}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5941,7 +5941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7924238670900844029}
   - component: {fileID: 3182842837170574274}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Body Parts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6000,7 +6000,7 @@ GameObject:
   - component: {fileID: 7924238670935135455}
   - component: {fileID: 7924238670935135454}
   - component: {fileID: 6413201107550528626}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Exclamation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6117,7 +6117,7 @@ GameObject:
   - component: {fileID: 7924238672007752740}
   - component: {fileID: 7924238672007752746}
   - component: {fileID: 7924238672007752741}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle Will Die
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10988,7 +10988,7 @@ GameObject:
   - component: {fileID: 5832263418509956762}
   - component: {fileID: 2054098502181861429}
   - component: {fileID: 5328585238804713375}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Death_FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15800,7 +15800,7 @@ GameObject:
   - component: {fileID: 5749553415623943513}
   - component: {fileID: 2802215277914701953}
   - component: {fileID: 6175392742606002245}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15883,7 +15883,7 @@ GameObject:
   - component: {fileID: 3820900911110311097}
   - component: {fileID: 3992523556296171484}
   - component: {fileID: 81575372189856624}
-  m_Layer: 1
+  m_Layer: 9
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}

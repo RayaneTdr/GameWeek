@@ -5,7 +5,7 @@ public class Obstacle : MonoBehaviour
 {
     //  Private Variables
 
-    private int obstructionCount = 0;
+    private int m_obstructionCount = 0;
     private bool m_canBePlaced = false;
     private bool m_isGrabbed = false;
 
@@ -19,6 +19,8 @@ public class Obstacle : MonoBehaviour
 
     private Vector3 m_grabOffset;
     private bool    m_grabOffsetSet = true;
+
+    private List<Dummy> m_dummiesInPreviewZone = new List<Dummy>();
 
     private List<MeshRenderer> m_renderer = new List<MeshRenderer>();
     
@@ -34,8 +36,6 @@ public class Obstacle : MonoBehaviour
     private Animator m_animator;
 
     //  Public Variables
-
-    public int cost = 25;
 
     [HideInInspector] 
     public bool isNew = true;
@@ -64,17 +64,17 @@ public class Obstacle : MonoBehaviour
         m_floorLayerMask = LayerMask.GetMask("Floor");
     }
 
-    private void Start()
+    protected void Start()
     {
         m_collider.isTrigger = true;
     }
 
-    void Update()
+    protected void Update()
     {
 
         bool couldBePLaced = m_canBePlaced;
 
-        m_canBePlaced = obstructionCount == 0 && Physics.Raycast(transform.position + m_offsetOrigin * Vector3.up, Vector3.down, 5f, m_floorLayerMask);
+        m_canBePlaced = m_obstructionCount == 0 && Physics.Raycast(transform.position + m_offsetOrigin * Vector3.up, Vector3.down, 5f, m_floorLayerMask);
         Debug.DrawLine(transform.position + m_offsetOrigin * Vector3.up, transform.position + m_offsetOrigin * Vector3.up + Vector3.down * 5f);
         if (couldBePLaced != m_canBePlaced)
         {
@@ -108,22 +108,42 @@ public class Obstacle : MonoBehaviour
 
     //  Trigger Events Functions
 
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Obstacle") || other.CompareTag("Prop"))
+        if (m_isGrabbed)
         {
-            obstructionCount++;
+            if (other.CompareTag("Obstacle") || other.CompareTag("Prop"))
+            {
+                m_obstructionCount++;
+            }
+            else if (other.CompareTag("dummy"))
+            {
+                if (other.gameObject.TryGetComponent(out Dummy dummy))
+                {
+                    m_dummiesInPreviewZone.Add(dummy);
+                }
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Obstacle") || other.CompareTag("Prop"))
+        if (m_isGrabbed)
         {
-            //  Teleporting a collider which is inside the trigger won't trigger the OnTriggerExit.
-            //  To avoid this problem we reset obstruction count to 0 in the Drop() function.
-            //  Here, to avoid this variable to go beneath 0, we limit over 0.
-            obstructionCount = Mathf.Max(0, obstructionCount - 1);
+            if (other.CompareTag("Obstacle") || other.CompareTag("Prop"))
+            {
+                //  Teleporting a collider which is inside the trigger won't trigger the OnTriggerExit.
+                //  To avoid this problem we reset obstruction count to 0 in the Drop() function.
+                //  Here, to avoid this variable to go beneath 0, we limit over 0.
+                m_obstructionCount = Mathf.Max(0, m_obstructionCount - 1);
+            }
+            else if (other.CompareTag("dummy"))
+            {
+                if (other.gameObject.TryGetComponent(out Dummy dummy))
+                {
+                    m_dummiesInPreviewZone.Remove(dummy);
+                }
+            }
         }
     }
 
@@ -142,13 +162,19 @@ public class Obstacle : MonoBehaviour
 
     public bool Drop()
     {
-        obstructionCount = 0;
-        m_grabOffsetSet  = false;
-        m_grabOffset = Vector3.zero;
+        m_grabOffsetSet = false;
+        m_grabOffset    = Vector3.zero;
+
+        bool success = false;
 
         //  If it can be placed wether its new or not
         if (m_canBePlaced)
         {
+            foreach (Dummy dummy in m_dummiesInPreviewZone)
+            {
+                if(dummy) dummy.Kill();
+            }
+
             m_collider.isTrigger = false;
             isNew = false;
             m_isGrabbed = false;
@@ -161,11 +187,11 @@ public class Obstacle : MonoBehaviour
                 i++;
             }
 
-            return true;
+            success = true;
         }
 
         //  If is not new and has saved positions
-        if (!isNew)
+        else if (!isNew)
         {
             transform.position = m_savedPosition;
             transform.rotation = m_savedRotation;
@@ -182,13 +208,20 @@ public class Obstacle : MonoBehaviour
                 i++;
             }
 
-            return false;
+            success = false;
+        }
+        //  Else it can only be a new obstacle which can't be placed
+        else
+        {
+            Destroy(gameObject);
+
+            success = false;
         }
 
-        //  Else it can only be a new obstacle which can't be placed
-        Destroy(gameObject);
+        m_obstructionCount = 0;
+        m_dummiesInPreviewZone.Clear();
 
-        return false;
+        return success;
     }
 
     public void Grab()
