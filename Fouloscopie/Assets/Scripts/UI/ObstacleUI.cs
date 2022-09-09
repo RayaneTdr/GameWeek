@@ -8,9 +8,6 @@ public class ObstacleUI : MonoBehaviour
     [SerializeField]
     private PlayerGrabber m_grabber;
 
-    [SerializeField]
-    private PlayerController m_player;
-
     public void OnClick()
     {
         GameObject go = Instantiate(m_originalPrefab);

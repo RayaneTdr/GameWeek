@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.7034186, g: 0.9339623, b: 0.6731577, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -301,7 +301,6 @@ GameObject:
   - component: {fileID: 4617739851885046715}
   - component: {fileID: 8150359755532074344}
   - component: {fileID: 7431039338852287856}
-  - component: {fileID: 7631846372628254277}
   m_Layer: 5
   m_Name: bouton_5
   m_TagString: Untagged
@@ -378,7 +377,7 @@ Animator:
   m_GameObject: {fileID: 3513438971902526025}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3ed6aca6ea92d3e44a6721d3aa5861c7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 213df912e9f6e654f8a160f0e004d16b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -432,7 +431,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7631846372628254277}
+      - m_Target: {fileID: 6854053446261567167}
+        m_TargetAssemblyTypeName: UIScriptBuildBar, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ObstacleUI, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -444,22 +455,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7631846372628254277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3513438971902526025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c39b21a7a7839134298bc891acb13ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_originalPrefab: {fileID: 9157657656999487331, guid: 2bac97043eaa1d94482fe065149dec1e,
-    type: 3}
-  m_grabber: {fileID: 0}
-  m_player: {fileID: 0}
 --- !u!1 &4916913787864485324
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +588,7 @@ GameObject:
   - component: {fileID: 6999955108809645129}
   - component: {fileID: 6999955108809645131}
   - component: {fileID: 6999955108809645130}
+  - component: {fileID: 6854053446261567167}
   m_Layer: 5
   m_Name: BuildBar
   m_TagString: Untagged
@@ -609,7 +605,7 @@ RectTransform:
   m_GameObject: {fileID: 6999955108809645128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6999955110344699154}
@@ -623,7 +619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.952393, y: -14.000534}
+  m_AnchoredPosition: {x: 12.009796, y: -13.763565}
   m_SizeDelta: {x: 747.5864, y: 139}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6999955108809645131
@@ -664,6 +660,31 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6854053446261567167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6999955108809645128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a6508140ea17741a82022e382647ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playerGrabber: {fileID: 0}
+  m_buttons:
+  - {fileID: 6999955110344699158}
+  - {fileID: 1181016329235989316}
+  - {fileID: 6719985506364454761}
+  - {fileID: 4495296575788551325}
+  - {fileID: 7431039338852287856}
+  m_obstacles:
+  - {fileID: 9157657656999487331, guid: c6cc0e1c93e45b8418b132aaef6fd925, type: 3}
+  - {fileID: 9157657656999487331, guid: c333d10f39d44824ea784b545636eeb6, type: 3}
+  - {fileID: 9157657656999487331, guid: 4db58c1428116884fb5a9a1b32dc0ffc, type: 3}
+  - {fileID: 5293295647635927091, guid: 3a93ca32bdf05ce40a875a6afd2f9473, type: 3}
+  - {fileID: 0}
 --- !u!1 &6999955109101361010
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,7 +1017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1169,7 +1190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1344,7 +1365,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6999955109628488794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1422,7 +1443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1451,7 +1472,6 @@ GameObject:
   - component: {fileID: 6999955109758581818}
   - component: {fileID: 6999955109758581820}
   - component: {fileID: 6719985506364454761}
-  - component: {fileID: 972434189773406848}
   m_Layer: 5
   m_Name: bouton_3
   m_TagString: Untagged
@@ -1528,7 +1548,7 @@ Animator:
   m_GameObject: {fileID: 6999955109758581816}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3ed6aca6ea92d3e44a6721d3aa5861c7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 213df912e9f6e654f8a160f0e004d16b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1582,7 +1602,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 972434189773406848}
+      - m_Target: {fileID: 6854053446261567167}
+        m_TargetAssemblyTypeName: UIScriptBuildBar, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ObstacleUI, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -1594,22 +1626,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &972434189773406848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6999955109758581816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c39b21a7a7839134298bc891acb13ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_originalPrefab: {fileID: 9157657656999487331, guid: 4db58c1428116884fb5a9a1b32dc0ffc,
-    type: 3}
-  m_grabber: {fileID: 0}
-  m_player: {fileID: 0}
 --- !u!1 &6999955109836708980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,7 +1665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -290.50104, y: -185.46698}
+  m_AnchoredPosition: {x: -173.00006, y: -35}
   m_SizeDelta: {x: 581.002, y: 370.932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6999955109836708984
@@ -1695,7 +1711,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6999955109836708982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,7 +1839,6 @@ GameObject:
   - component: {fileID: 6999955109973647388}
   - component: {fileID: 6999955109973647390}
   - component: {fileID: 1181016329235989316}
-  - component: {fileID: 2070401737312528787}
   m_Layer: 5
   m_Name: bouton_2
   m_TagString: Untagged
@@ -1900,7 +1915,7 @@ Animator:
   m_GameObject: {fileID: 6999955109973647386}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3ed6aca6ea92d3e44a6721d3aa5861c7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 213df912e9f6e654f8a160f0e004d16b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1954,7 +1969,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2070401737312528787}
+      - m_Target: {fileID: 6854053446261567167}
+        m_TargetAssemblyTypeName: UIScriptBuildBar, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ObstacleUI, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -1966,22 +1993,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2070401737312528787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6999955109973647386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c39b21a7a7839134298bc891acb13ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_originalPrefab: {fileID: 9157657656999487331, guid: c333d10f39d44824ea784b545636eeb6,
-    type: 3}
-  m_grabber: {fileID: 0}
-  m_player: {fileID: 0}
 --- !u!1 &6999955109991040619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2021,7 +2032,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 226.409, y: -145.10999}
+  m_AnchoredPosition: {x: 160, y: -87}
   m_SizeDelta: {x: 452.818, y: 290.219}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6999955109991040623
@@ -2174,7 +2185,6 @@ GameObject:
   - component: {fileID: 6999955110344699155}
   - component: {fileID: 6999955110344699158}
   - component: {fileID: 6999955110344699157}
-  - component: {fileID: 5097075772071038279}
   m_Layer: 5
   m_Name: bouton_1
   m_TagString: Untagged
@@ -2285,10 +2295,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5097075772071038279}
-        m_TargetAssemblyTypeName: ObstacleUI, Assembly-CSharp
+      - m_Target: {fileID: 6854053446261567167}
+        m_TargetAssemblyTypeName: UIScriptBuildBar, Assembly-CSharp
         m_MethodName: OnClick
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2307,7 +2317,7 @@ Animator:
   m_GameObject: {fileID: 6999955110344699153}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3ed6aca6ea92d3e44a6721d3aa5861c7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 213df912e9f6e654f8a160f0e004d16b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2317,22 +2327,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5097075772071038279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6999955110344699153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c39b21a7a7839134298bc891acb13ce9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_originalPrefab: {fileID: 9157657656999487331, guid: c6cc0e1c93e45b8418b132aaef6fd925,
-    type: 3}
-  m_grabber: {fileID: 0}
-  m_player: {fileID: 0}
 --- !u!1 &6999955110812446889
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,7 +2413,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6999955110812446890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2921,7 +2915,7 @@ Animator:
   m_GameObject: {fileID: 9168430441218190719}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3ed6aca6ea92d3e44a6721d3aa5861c7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 213df912e9f6e654f8a160f0e004d16b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2975,14 +2969,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2376236296497714818}
-        m_TargetAssemblyTypeName: UIScriptSmoke, Assembly-CSharp
+      - m_Target: {fileID: 6854053446261567167}
+        m_TargetAssemblyTypeName: UIScriptBuildBar, Assembly-CSharp
         m_MethodName: OnClick
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3119,6 +3113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HUD_Fin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390761098423629391, guid: 9f92e4447e8d70a47a3e4ac5318ec509,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f92e4447e8d70a47a3e4ac5318ec509, type: 3}

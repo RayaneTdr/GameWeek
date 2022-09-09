@@ -179,4 +179,10 @@ public class PlayerGrabber : MonoBehaviour
         m_repulsive = repulsive;
         m_justLoadedSmoke = true;
     }
+    
+    
+    public bool IsFree()
+    {
+        return !m_selected;
+    }
 }
