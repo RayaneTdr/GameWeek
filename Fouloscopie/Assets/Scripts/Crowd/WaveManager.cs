@@ -93,9 +93,9 @@ public class WaveManager : MonoBehaviour
         }
 
         if (currentTime.y < 10f)
-            timeRenderer.text = currentTime.x + ":" +0+ (int)currentTime.y;
+            timeRenderer.text = currentTime.x + ":" +0+ (int)currentTime.y + "am!";
         else
-            timeRenderer.text = currentTime.x + ":" + (int)currentTime.y;
+            timeRenderer.text = currentTime.x + ":" + (int)currentTime.y + "am!";
     }
 
     public void LaunchWave()
