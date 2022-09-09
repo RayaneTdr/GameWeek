@@ -7,6 +7,7 @@ public class UIScriptMainMenu : MonoBehaviour
     [SerializeField] private string m_mainMenu;
     public void OnPlayButtonPressed()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(m_scene);
     }
 
@@ -17,6 +18,8 @@ public class UIScriptMainMenu : MonoBehaviour
 
     public void OnMainMenuButtonPressed() 
     {
+        Time.timeScale = 1f;
+
         SceneManager.LoadScene(m_mainMenu);
 
     }
