@@ -101,6 +101,7 @@ public class WaveManager : MonoBehaviour
             // start ending animation
             endPrinter.SetActive(true);
             endPrinter.GetComponentInChildren<TicketRenderer>().Display();
+            Time.timeScale = 0f;
             isActive = false;
         }
     }
