@@ -44,11 +44,12 @@ public class WaveManager : MonoBehaviour
     public List<Target> targets;
     public List<End> ends;
 
-    int waveIndex = -1;
+    public GameObject endPrinter;
+    public int waveIndex = -1;
 
 
     bool dirtyFlag = false; // gros gros ratio
-
+    
     bool isActive = true;
 
     private void Start()
@@ -71,8 +72,10 @@ public class WaveManager : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.P)) 
         {
-            LaunchDistraction();
+            endPrinter.SetActive(true);
+            endPrinter.GetComponentInChildren<TicketRenderer>().Display();
         }
+
     }
 
     public void UpdateHour()
@@ -87,11 +90,12 @@ public class WaveManager : MonoBehaviour
         {
             currentTime.x += 1f;
             currentTime.y -= 60f;
-
-            if (!dirtyFlag)
-                LaunchWave();
+            
+            LaunchWave();
+            dirtyFlag = false;
         }
 
+        // to modify
         if (currentTime.y < 10f)
             timeRenderer.text = currentTime.x + ":" +0+ (int)currentTime.y + "am!";
         else
@@ -101,8 +105,19 @@ public class WaveManager : MonoBehaviour
     public void LaunchWave()
     {
         waveIndex++;
-        dirtyFlag = true;
-        StartCoroutine(TickWave());
+
+        if (waves.Count > waveIndex)
+        {
+            dirtyFlag = true;
+            StartCoroutine(TickWave());
+        }
+        else if (waveIndex > waves.Count + 2) 
+        {
+            // start ending animation
+            endPrinter.SetActive(true);
+            endPrinter.GetComponentInChildren<TicketRenderer>().Display();
+            isActive = false;
+        }
     }
 
     public void TrySpawn(bool force = false)
@@ -155,7 +170,8 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator TickWave()
     {
-        Timer wave = new Timer(30f);
+        //Timer wave = new Timer(30f); // - de 10 de qi pour coder ca
+        Timer wave = new Timer(timeBetweenWaves); // - de 10 de qi pour coder ca
         Timer spawnBuffer = new Timer(1f);
 
         wave.Start();
@@ -172,7 +188,6 @@ public class WaveManager : MonoBehaviour
             yield return null;
         }
 
-        dirtyFlag = false;
         if (waves[waveIndex] > 0) // force spawn the remaining
             TrySpawn(true);
 

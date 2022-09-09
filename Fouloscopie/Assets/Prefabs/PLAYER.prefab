@@ -495,6 +495,21 @@ PrefabInstance:
       propertyPath: m_grabber
       value: 
       objectReference: {fileID: 696920148495977191}
+    - target: {fileID: 5361347038791107468, guid: 7aa764d2f80dc4944b751a89f52f5bf9,
+        type: 3}
+      propertyPath: m_Name
+      value: died
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999955109267123691, guid: 7aa764d2f80dc4944b751a89f52f5bf9,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999955109267123691, guid: 7aa764d2f80dc4944b751a89f52f5bf9,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6999955109836708983, guid: 7aa764d2f80dc4944b751a89f52f5bf9,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -639,6 +654,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307429013630789131, guid: 7aa764d2f80dc4944b751a89f52f5bf9,
+        type: 3}
+      propertyPath: m_Name
+      value: saved
       objectReference: {fileID: 0}
     - target: {fileID: 7631846372628254277, guid: 7aa764d2f80dc4944b751a89f52f5bf9,
         type: 3}
