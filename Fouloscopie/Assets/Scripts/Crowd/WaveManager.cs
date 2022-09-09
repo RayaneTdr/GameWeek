@@ -200,6 +200,8 @@ public class WaveManager : MonoBehaviour
         // may optimize this
         foreach (Dummy dummy in dummies)
             dummy.ResetPromotionDestination();
+
+        Destroy(promotionT.gameObject);
     }
 
     public Transform GetRandomTarget()
