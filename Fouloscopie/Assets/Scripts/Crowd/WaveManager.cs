@@ -45,6 +45,7 @@ public class WaveManager : MonoBehaviour
     public List<End> ends;
 
     public GameObject endPrinter;
+    public GameObject endOutro;
     public int waveIndex = -1;
 
 
@@ -99,8 +100,7 @@ public class WaveManager : MonoBehaviour
         else if (waveIndex > waves.Count + 2) 
         {
             // start ending animation
-            endPrinter.SetActive(true);
-            endPrinter.GetComponentInChildren<TicketRenderer>().Display();
+            endOutro.SetActive(true);
             Time.timeScale = 0f;
             isActive = false;
         }
