@@ -5615,7 +5615,7 @@ PrefabInstance:
     - target: {fileID: 6872996259732457263, guid: 63194544ec2d0ed4c8b10b7df28bd0d2,
         type: 3}
       propertyPath: waves.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6872996259732457263, guid: 63194544ec2d0ed4c8b10b7df28bd0d2,
         type: 3}
@@ -5630,17 +5630,17 @@ PrefabInstance:
     - target: {fileID: 6872996259732457263, guid: 63194544ec2d0ed4c8b10b7df28bd0d2,
         type: 3}
       propertyPath: waves.Array.data[0]
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6872996259732457263, guid: 63194544ec2d0ed4c8b10b7df28bd0d2,
         type: 3}
       propertyPath: waves.Array.data[1]
-      value: 35
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6872996259732457263, guid: 63194544ec2d0ed4c8b10b7df28bd0d2,
         type: 3}
       propertyPath: waves.Array.data[2]
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6872996259732457263, guid: 63194544ec2d0ed4c8b10b7df28bd0d2,
         type: 3}
@@ -5701,6 +5701,11 @@ PrefabInstance:
         type: 3}
       propertyPath: waves.Array.data[14]
       value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872996259732457263, guid: 63194544ec2d0ed4c8b10b7df28bd0d2,
+        type: 3}
+      propertyPath: focusedSpawner.Array.data[0]
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63194544ec2d0ed4c8b10b7df28bd0d2, type: 3}
@@ -9279,10 +9284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39b21a7a7839134298bc891acb13ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_originalPrefab: {fileID: 4763086127987888644, guid: ea2df52f6826a04428e334fdd721ebd9,
-    type: 3}
-  m_grabber: {fileID: 0}
-  m_player: {fileID: 0}
 --- !u!114 &541087937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15567,7 +15568,7 @@ PrefabInstance:
     - target: {fileID: 3157787416488268173, guid: fb17367440f54f74bb54c8d0b220c3f9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3157787417519933378, guid: fb17367440f54f74bb54c8d0b220c3f9,
         type: 3}
