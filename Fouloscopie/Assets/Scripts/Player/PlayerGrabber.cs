@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerCamera))]
@@ -20,6 +21,9 @@ public class PlayerGrabber : MonoBehaviour
 
     [SerializeField, Range(0.1f, 100f)]
     private float m_rotationSpeed = 10f;
+    private Repulsive m_repulsive;
+
+    private bool m_justLoadedSmoke = false;
 
     // MonoBehaviour Functions
 
@@ -36,10 +40,47 @@ public class PlayerGrabber : MonoBehaviour
 
     void Update()
     {
+
+        if (!m_justLoadedSmoke && m_repulsive)
+        {
+            //  If mous left click is unpressed, place the selected
+            if (m_playerController.leftClickPressed)
+            {
+                if (m_playerCamera.RaycastToMouse(out RaycastHit hit, m_floorLayerMask))
+                {
+                    m_repulsive.gameObject.SetActive(true);
+                    m_repulsive.Drop(hit.point);
+                    m_repulsive = null;
+                }
+                else
+                {
+                    Destroy(m_repulsive.gameObject);
+                    m_repulsive = null;
+                }
+            }
+
+            if (m_playerController.rightClickPressed)
+            {
+                m_repulsive.Abort();
+            }
+
+            m_justLoadedSmoke = false;
+            return;
+        }
+        
+        m_justLoadedSmoke = false;
+
         if (m_selected)
         {
+            if (m_playerController.rightClickPressed)
+            {
+                m_selected.AbortDrag();
+
+                return;
+            }
+
             //  Rotate if rotation button is pressed
-            if(m_playerController.rotateButtonHeldDown)
+            if (m_playerController.rotateButtonHeldDown)
             {
                 m_selected.Rotate(m_playerController.deltaMouse.x * m_rotationSpeed);
             }
@@ -67,22 +108,22 @@ public class PlayerGrabber : MonoBehaviour
 
             return;
         }
-        
-        if(m_playerController.leftClickPressed)
+
+        if (!EventSystem.current.IsPointerOverGameObject() && m_playerController.leftClickPressed)
         {
             if (m_playerCamera.RaycastToMouse(out RaycastHit hit, m_obstacleLayerMask))
             {
-                if (hit.transform.gameObject.TryGetComponent<Obstacle>(out Obstacle obstacle))
+                if (hit.transform.gameObject.TryGetComponent<Obstacle>(out Obstacle obstacle) && obstacle.isMovable)
                 {
                     BeginDrag(obstacle);
                 }
             }
         }
-        else if(m_playerController.rightClickPressed)
+        else if(!EventSystem.current.IsPointerOverGameObject() && m_playerController.rightClickPressed)
         {
             if (m_playerCamera.RaycastToMouse(out RaycastHit hit, m_obstacleLayerMask))
             {
-                if (hit.transform.gameObject.TryGetComponent<Obstacle>(out Obstacle obstacle))
+                if (hit.transform.gameObject.TryGetComponent<Obstacle>(out Obstacle obstacle) && obstacle.isMovable)
                 {
                     obstacle.StartDestroy();
                     m_obstacles.Remove(obstacle);
@@ -131,5 +172,11 @@ public class PlayerGrabber : MonoBehaviour
 
         m_playerController.freezeGrabMovement = true;
         m_holdDrag = holdDrag;
+    }
+
+    public void LoadSmoke(Repulsive repulsive)
+    {
+        m_repulsive = repulsive;
+        m_justLoadedSmoke = true;
     }
 }

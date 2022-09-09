@@ -127,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6515974866379952362}
   - component: {fileID: 1738525321846968218}
-  - component: {fileID: 6482000885009562081}
+  - component: {fileID: 1796857127278461630}
   m_Layer: 6
   m_Name: Physic
   m_TagString: Untagged
@@ -164,22 +164,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7161825574219575705, guid: bcc3c47f87a7c644bbc00c8b5c87efbb, type: 3}
---- !u!208 &6482000885009562081
-NavMeshObstacle:
+--- !u!65 &1796857127278461630
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3003805104487762275}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  serializedVersion: 2
+  m_Size: {x: 362.93, y: 400, z: 872.32}
+  m_Center: {x: 0, y: 200, z: 0}
 --- !u!1 &3657787690164008557
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8384956703323946457}
   - component: {fileID: 8581134893937007252}
-  - component: {fileID: 4236408799302636342}
+  - component: {fileID: 2746059112761472041}
   m_Layer: 6
   m_Name: PromosTrapStand
   m_TagString: Untagged
@@ -738,7 +735,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4236408799302636342
+--- !u!114 &2746059112761472041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -747,9 +744,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9157657656999487331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4b0062b089703241b66e44fe656e430, type: 3}
+  m_Script: {fileID: 11500000, guid: b8128ef6ba76c8348b8c3b318f91627c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMovable: 0
   m_previewMaterial: {fileID: 2100000, guid: ebbc84d69dad3f1489febb02d9bf5807, type: 2}
   m_model: {fileID: 622503566474662057}
   bounceSpeed: 10

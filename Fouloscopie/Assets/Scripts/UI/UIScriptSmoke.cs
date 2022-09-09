@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleUI : MonoBehaviour
+public class UIScriptSmoke : MonoBehaviour
 {
     [SerializeField]
     private GameObject m_originalPrefab;
@@ -15,9 +17,10 @@ public class ObstacleUI : MonoBehaviour
     {
         GameObject go = Instantiate(m_originalPrefab);
 
-        if (go.TryGetComponent<Obstacle>(out Obstacle obstacle))
+        if (go.TryGetComponent(out Repulsive repulsive))
         {
-            m_grabber.BeginDrag(obstacle, false);
+            go.SetActive(false);
+            m_grabber.LoadSmoke(repulsive);
         }
         else
         {

@@ -60,19 +60,6 @@ public class WaveManager : MonoBehaviour
     {
         if (isActive)
             UpdateHour();
-
-
-        //------ TO REMOVE
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (cam.RaycastToMouse(out RaycastHit hit, LayerMask.GetMask("Floor")))
-                Instantiate(smokePrefab, new Vector3(hit.point.x, hit.point.y+ 0.855f, hit.point.z), Quaternion.identity);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.P)) 
-        {
-            LaunchDistraction();
-        }
     }
 
     public void UpdateHour()
