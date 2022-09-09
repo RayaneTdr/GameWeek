@@ -36,6 +36,8 @@ public class PlayerCamera : MonoBehaviour
 
     [Header("Speed parameters")]
 
+    [SerializeField, Range(1.0f, 20.0f)]
+    private float m_grabMovementSpeed = 1f;
     [SerializeField, Range(1.0f, 50.0f)]
     private float m_movementSpeed = 25f;
     [SerializeField, Range(1.0f, 50.0f)]
@@ -76,7 +78,7 @@ public class PlayerCamera : MonoBehaviour
 
     public void UpdatePosition()
     {
-        float grabSpeed = cameraComponent.transform.localPosition.z / m_offset;
+        float grabSpeed = (cameraComponent.transform.localPosition.z / m_offset) * m_grabMovementSpeed;
 
         /*m_playerController.cameraMovement * m_movementSpeed + */
 

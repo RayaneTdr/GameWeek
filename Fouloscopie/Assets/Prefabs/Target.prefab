@@ -207,6 +207,7 @@ MonoBehaviour:
   m_right: 100
   m_back: -100
   m_front: 100
+  m_grabMovementSpeed: 10
   m_movementSpeed: 25
   m_rotationSpeed: 25
   cameraComponent: {fileID: 0}
@@ -222,3 +223,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe53c4aae25b71243a773d5eb35043d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_rotationSpeed: 10

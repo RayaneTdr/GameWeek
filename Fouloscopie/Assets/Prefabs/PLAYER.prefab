@@ -360,6 +360,11 @@ PrefabInstance:
       propertyPath: m_right
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 249950551954629530, guid: 1a2eb5f7282de57488d411c43481d533,
+        type: 3}
+      propertyPath: m_grabMovementSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 249950551954629531, guid: 1a2eb5f7282de57488d411c43481d533,
         type: 3}
       propertyPath: m_RootOrder
@@ -510,6 +515,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: died
       objectReference: {fileID: 0}
+    - target: {fileID: 6854053446261567167, guid: 7aa764d2f80dc4944b751a89f52f5bf9,
+        type: 3}
+      propertyPath: m_playerGrabber
+      value: 
+      objectReference: {fileID: 696920148495977191}
+    - target: {fileID: 6854053446261567167, guid: 7aa764d2f80dc4944b751a89f52f5bf9,
+        type: 3}
+      propertyPath: m_playerController
+      value: 
+      objectReference: {fileID: 696920148495977194}
     - target: {fileID: 6999955109267123691, guid: 7aa764d2f80dc4944b751a89f52f5bf9,
         type: 3}
       propertyPath: m_fontSize

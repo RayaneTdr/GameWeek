@@ -72,11 +72,10 @@ public class Obstacle : MonoBehaviour
 
     protected void Update()
     {
-
         bool couldBePLaced = m_canBePlaced;
 
-        m_canBePlaced = m_obstructionCount == 0 && Physics.Raycast(transform.position + m_offsetOrigin * Vector3.up, Vector3.down, 5f, m_floorLayerMask);
-        Debug.DrawLine(transform.position + m_offsetOrigin * Vector3.up, transform.position + m_offsetOrigin * Vector3.up + Vector3.down * 5f);
+        m_canBePlaced = m_obstructionCount == 0 && Physics.Raycast(transform.position + m_offsetOrigin * Vector3.up, Vector3.down, 100f, m_floorLayerMask);
+
         if (couldBePLaced != m_canBePlaced)
         {
             if (m_canBePlaced)
@@ -98,12 +97,12 @@ public class Obstacle : MonoBehaviour
             float delta = Mathf.Sin(m_elapsedTime * bounceSpeed) * 0.5f + 0.5f;
             m_scale = Mathf.Lerp(0.8f, 0.9f, curve.Evaluate(delta));
 
-            m_model.transform.localScale = Vector3.one * 2.0f * m_scale;
+            m_model.transform.localScale = Vector3.one * m_scale;
         }
         else
         {
             //  Smoothly set the scale to 1 if not grabbed
-            m_model.transform.localScale = Vector3.Lerp(m_model.transform.localScale, Vector3.one * 2.0f, 0.05f);
+            m_model.transform.localScale = Vector3.Lerp(m_model.transform.localScale, Vector3.one, 0.05f);
         }
     }
 

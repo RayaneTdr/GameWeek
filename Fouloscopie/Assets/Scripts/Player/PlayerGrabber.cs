@@ -46,7 +46,7 @@ public class PlayerGrabber : MonoBehaviour
             //  If mous left click is unpressed, place the selected
             if (m_playerController.leftClickPressed)
             {
-                if (m_playerCamera.RaycastToMouse(out RaycastHit hit, m_floorLayerMask))
+                if (!EventSystem.current.IsPointerOverGameObject() && m_playerCamera.RaycastToMouse(out RaycastHit hit, m_floorLayerMask))
                 {
                     m_repulsive.gameObject.SetActive(true);
                     m_repulsive.Drop(hit.point);
@@ -178,5 +178,17 @@ public class PlayerGrabber : MonoBehaviour
     {
         m_repulsive = repulsive;
         m_justLoadedSmoke = true;
+    }
+    
+    
+    public bool IsFree()
+    {
+        return !m_selected && !m_repulsive;
+    }
+
+    
+    public int GetObstacleCount()
+    {
+        return m_obstacles.Count;
     }
 }

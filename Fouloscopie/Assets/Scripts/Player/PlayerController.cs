@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private const float deltaMouseFactor = 100f;
 
-    public int obstacleLimit = 5;
+    public int obstacleLimit = 7;
 
     // MonoBehaviour Functions
 

@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 public class DummiesCounter : MonoBehaviour
 {
-
     [SerializeField] TextMeshProUGUI text;
     void Update()
     {
