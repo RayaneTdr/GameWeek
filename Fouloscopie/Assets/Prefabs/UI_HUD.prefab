@@ -2844,6 +2844,7 @@ GameObject:
   - component: {fileID: 5931344969665815425}
   - component: {fileID: 6757533824396894731}
   - component: {fileID: 4495296575788551325}
+  - component: {fileID: 2376236296497714818}
   m_Layer: 5
   m_Name: bouton_4
   m_TagString: Untagged
@@ -2973,7 +2974,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6999955110344699155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2376236296497714818}
+        m_TargetAssemblyTypeName: UIScriptSmoke, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2376236296497714818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168430441218190719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966c11656a6bafa4ab33098783d63723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_originalPrefab: {fileID: 5293295647635927091, guid: 3a93ca32bdf05ce40a875a6afd2f9473,
+    type: 3}
+  m_grabber: {fileID: 0}
+  m_player: {fileID: 0}
 --- !u!1001 &7307429013686900878
 PrefabInstance:
   m_ObjectHideFlags: 0

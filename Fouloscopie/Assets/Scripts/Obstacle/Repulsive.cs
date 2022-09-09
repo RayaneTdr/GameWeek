@@ -1,21 +1,30 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
-public class Repulsive : Obstacle
+public class Repulsive : MonoBehaviour
 {
 
     [SerializeField] SphereCollider col;
     [SerializeField] float time = 1f;
     [SerializeField] float radius = 1f;
 
-    protected new void Start()
+
+    public void Drop(Vector3 position)
     {
-        base.Start();
+        transform.position = position;
+
         col = GetComponent<SphereCollider>();
         col.radius = radius;
         AstarPath.active.Scan();
         Invoke("ResetAndDestroy", time);
     }
+
+
+    public void Abort()
+    {
+        Destroy(gameObject);
+    }
+
 
     void ResetAndDestroy() 
     {
