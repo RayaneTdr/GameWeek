@@ -183,6 +183,6 @@ public class PlayerGrabber : MonoBehaviour
     
     public bool IsFree()
     {
-        return !m_selected;
+        return !m_selected && !m_repulsive;
     }
 }

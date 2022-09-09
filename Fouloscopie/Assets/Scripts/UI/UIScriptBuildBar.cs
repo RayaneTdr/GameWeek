@@ -44,9 +44,14 @@ public class UIScriptBuildBar : MonoBehaviour
 
         GameObject go = Instantiate(m_obstacles[index]);
 
-        if (go.TryGetComponent<Obstacle>(out Obstacle obstacle))
+        if (go.TryGetComponent(out Obstacle obstacle))
         {
             m_playerGrabber.BeginDrag(obstacle, false);
+        }
+        else if(go.TryGetComponent(out Repulsive rep))
+        {
+            go.SetActive(false);
+            m_playerGrabber.LoadSmoke(rep);
         }
         else
         {
