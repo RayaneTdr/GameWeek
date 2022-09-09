@@ -1,15 +1,16 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
-public class Repulsive : MonoBehaviour
+public class Repulsive : Obstacle
 {
 
     [SerializeField] SphereCollider col;
     [SerializeField] float time = 1f;
     [SerializeField] float radius = 1f;
 
-    private void Start()
+    protected new void Start()
     {
+        base.Start();
         col = GetComponent<SphereCollider>();
         col.radius = radius;
         AstarPath.active.Scan();

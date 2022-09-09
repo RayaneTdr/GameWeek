@@ -155,7 +155,7 @@ public class Dummy : MonoBehaviour
         GetComponentInChildren<Outline>().enabled = false;
     }
 
-    void Kill()
+    public void Kill()
     {
         animator.SetTrigger("Death");
         onDieBroadcast.Invoke();
@@ -166,7 +166,7 @@ public class Dummy : MonoBehaviour
         GetComponent<Pathfinding.RVO.RVOController>().enabled = false;
         agent.enabled = false;
 
-        audio.Play("CustomerDeath");
+        //audio.Play("CustomerDeath");
 
         GameManager.diedDummies++;
         StartCoroutine(CorpseAnimation());

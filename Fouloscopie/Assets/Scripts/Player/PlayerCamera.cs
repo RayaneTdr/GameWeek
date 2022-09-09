@@ -84,7 +84,7 @@ public class PlayerCamera : MonoBehaviour
         //  First apply direction inputs to the movement
         Vector2 movement = m_playerController.directionInput;
 
-        //  If grab movement are nopt frozen, apply it
+        //  Apply grab movements
         movement += m_playerController.cameraGrabMovement * grabSpeed;
 
         //  Scale the movement
