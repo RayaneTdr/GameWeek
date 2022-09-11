@@ -817,5 +817,5 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  FX: {fileID: 356696142756577529}
-  Chrono: {fileID: 2988631837195097832}
+  FX: {fileID: 0}
+  Chrono: {fileID: 6668169900244565632}

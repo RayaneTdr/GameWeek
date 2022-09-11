@@ -9,7 +9,7 @@ public class DummiesCounter : MonoBehaviour
     {
         int count = WaveManager.Instance.dummies.Count;
         if (count < 10)
-            text.text = "0+count";
+            text.text = "0"+count;
         else
             text.text = count.ToString();
     }
