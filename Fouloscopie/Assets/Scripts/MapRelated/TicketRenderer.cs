@@ -21,7 +21,7 @@ public class TicketRenderer : MonoBehaviour
 
     public void Update()
     {
-        deadEntry.text = "Dead: " + GameManager.diedDummies;
-        savedEntry.text = "Satisfied Clients: " + GameManager.savedDummies;
+        deadEntry.text = "Dead: " + WaveManager.diedDummies;
+        savedEntry.text = "Satisfied Clients: " + WaveManager.savedDummies;
     }
 }

@@ -48,6 +48,8 @@ public class WaveManager : MonoBehaviour
     public GameObject endOutro;
     public int waveIndex = -1;
 
+    public static int diedDummies = 0;
+    public static int savedDummies = 0;
 
     bool dirtyFlag = false; // gros gros ratio
     
@@ -68,7 +70,7 @@ public class WaveManager : MonoBehaviour
     {
         currentTime.y += Time.deltaTime * 30f / timeBetweenWaves; // tick
 
-        if (currentTime.y > 30f && !dirtyFlag)    //wave system
+        if (currentTime.y > 30f && !dirtyFlag && isActive)    //wave system
             LaunchWave();
 
 
@@ -90,6 +92,7 @@ public class WaveManager : MonoBehaviour
 
     public void LaunchWave()
     {
+        if (!isActive) return;
         waveIndex++;
 
         if (waves.Count > waveIndex)

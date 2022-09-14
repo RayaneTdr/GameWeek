@@ -170,7 +170,7 @@ public class Dummy : MonoBehaviour
 
         sound.Play("CustomerDeath");
 
-        GameManager.diedDummies++;
+        WaveManager.diedDummies++;
         StartCoroutine(CorpseAnimation());
 
         // sortie 
@@ -222,8 +222,9 @@ public class Dummy : MonoBehaviour
 
     public void Leave() 
     {
-        GameManager.Instance.audioManager.Play("CashMachine");   
-        GameManager.savedDummies++;
+        GameManager.Instance.audioManager.Play("CashMachine");
+        WaveManager.savedDummies++;
+        // play saved animation
         Destroy(gameObject);
     }   
 }

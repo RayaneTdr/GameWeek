@@ -41,7 +41,4 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
         isPaused = false;
     }
-
-    public static int diedDummies  = 0;
-    public static int savedDummies = 0;
 }
