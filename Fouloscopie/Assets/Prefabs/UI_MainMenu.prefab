@@ -1449,6 +1449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_scene: GameMap
   m_mainMenu: 
+  transition: {fileID: 0}
 --- !u!1 &9018674969339460838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,31 +1888,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7928618603840169132, guid: 330cb016c615d5a4fb3bf52721ba717c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7928618603840169132, guid: 330cb016c615d5a4fb3bf52721ba717c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6145833869245811299}
-    - target: {fileID: 7928618603840169132, guid: 330cb016c615d5a4fb3bf52721ba717c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 7928618603840169132, guid: 330cb016c615d5a4fb3bf52721ba717c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.Animator, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7928618603840169132, guid: 330cb016c615d5a4fb3bf52721ba717c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Close
       objectReference: {fileID: 0}
     - target: {fileID: 8064426838665026251, guid: 330cb016c615d5a4fb3bf52721ba717c,
         type: 3}

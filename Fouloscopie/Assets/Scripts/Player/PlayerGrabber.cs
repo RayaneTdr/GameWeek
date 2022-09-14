@@ -146,7 +146,7 @@ public class PlayerGrabber : MonoBehaviour
         bool dropped = m_selected.Drop();
 
         //  if it was successfully dropped, and was a new obstacle, then consume points from the player
-        if (dropped && wasNew)
+        if (dropped && wasNew && m_selected.isMovable)
         {
             if(m_playerController.obstacleLimit > m_obstacles.Count)
             {

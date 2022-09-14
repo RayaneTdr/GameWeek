@@ -11,13 +11,6 @@ public class WaveManager : MonoBehaviour
 
     public TextMeshProUGUI timeRenderer;
 
-    public Transform promotionT;
-    public float distractionTime = 10f;
-
-    // ----- TO REMOVE
-    public PlayerCamera cam;
-    public GameObject smokePrefab;
-
     private void Awake()
     {
         if (!instance)
@@ -34,9 +27,11 @@ public class WaveManager : MonoBehaviour
 
     [SerializeField] int attractedPercentage = 10; // x% of the crowd will be attracted
 
+    [SerializeField] PlayerGrabber grabber;
+
     [SerializeField] Vector2 currentTime = new Vector2(8f, 0f); // in game time
     public List<int> waves = new List<int>(); // number of dummies to spawn on waves
-
+ 
     public List<Dummy> dummies = new List<Dummy>();
 
     public List<int> focusedSpawner = new List<int>(); // main spawner used
@@ -44,9 +39,10 @@ public class WaveManager : MonoBehaviour
     public List<Target> targets;
     public List<End> ends;
 
-    public GameObject endPrinter;
     public GameObject endOutro;
     public int waveIndex = -1;
+
+    public Transform promoT;
 
     public static int diedDummies = 0;
     public static int savedDummies = 0;
@@ -142,19 +138,19 @@ public class WaveManager : MonoBehaviour
     public int SelectSpawner()
     {
         int index = Random.Range(0, 10);
+        
         if (index < 5)
-        {
             return focusedSpawner[waveIndex];
-        }
-        else
-        {
-            index = Random.Range(0, 2);
+        
+        //[0 1 2 3] 
 
-            if (index == 0)
-                return (int)Mathf.Repeat(focusedSpawner[waveIndex] - 1, focusedSpawner.Count - 1);
-            else
-                return (int)Mathf.Repeat(focusedSpawner[waveIndex] + 1, focusedSpawner.Count - 1);
-        }
+        index = Random.Range(0, 2);
+
+        if (index == 0)
+            return (int)Mathf.Repeat(focusedSpawner[waveIndex] - 1, focusedSpawner.Count - 1);
+        else
+            return (int)Mathf.Repeat(focusedSpawner[waveIndex] + 1, focusedSpawner.Count - 1);
+       
     }
 
     IEnumerator TickWave()
@@ -195,16 +191,15 @@ public class WaveManager : MonoBehaviour
             countToAttract--;
         }
         GameManager.Instance.audioManager.Play("BonusAlert");
-        Invoke("ResetDistraction", distractionTime);
     }
 
-    public void ResetDistraction() 
+    public void ResetDistraction(GameObject promotionGO) 
     {
         // may optimize this
         foreach (Dummy dummy in dummies)
             dummy.ResetPromotionDestination();
 
-        Destroy(promotionT.gameObject);
+        Destroy(promotionGO);
     }
 
     public Transform GetRandomTarget()

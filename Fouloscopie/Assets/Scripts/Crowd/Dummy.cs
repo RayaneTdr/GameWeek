@@ -91,9 +91,9 @@ public class Dummy : MonoBehaviour
 
     public void SetPromotionDestination() 
     {
-        if (WaveManager.Instance.promotionT) 
+        if (WaveManager.Instance.promoT) 
         {
-            agent.target = WaveManager.Instance.promotionT;
+            agent.target = WaveManager.Instance.promoT;
             isAttracted = true;
             // activate particles
         }

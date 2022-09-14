@@ -80,11 +80,11 @@ public class Obstacle : MonoBehaviour
         {
             if (m_canBePlaced)
             {
-                ChangeColor("_EmissionColor", new Color(0, 140, 190));
+                ChangeColor("_EmissionColor", new Color(0, 140, 190).Normalize());
             }
             else
             {
-                ChangeColor("_EmissionColor", new Color(255, 0, 0));
+                ChangeColor("_EmissionColor", new Color(255, 0, 0).Normalize());
             }
         }
 
@@ -256,11 +256,11 @@ public class Obstacle : MonoBehaviour
 
         if (m_canBePlaced)
         {
-            ChangeColor("_EmissionColor", new Color(0, 140, 190));
+            ChangeColor("_EmissionColor", new Color(0, 140, 190).Normalize());
         }
         else
         {
-            ChangeColor("_EmissionColor", new Color(255, 0, 0));
+            ChangeColor("_EmissionColor", new Color(255, 0, 0).Normalize());
         }
     }
 

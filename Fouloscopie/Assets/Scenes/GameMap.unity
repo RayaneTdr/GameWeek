@@ -5792,6 +5792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6872996259732457263, guid: 63194544ec2d0ed4c8b10b7df28bd0d2,
         type: 3}
+      propertyPath: vector2s.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872996259732457263, guid: 63194544ec2d0ed4c8b10b7df28bd0d2,
+        type: 3}
       propertyPath: waves.Array.data[0]
       value: 20
       objectReference: {fileID: 0}
@@ -16127,6 +16132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -221.00003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316978160922360232, guid: fb17367440f54f74bb54c8d0b220c3f9,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7779725951676082633, guid: fb17367440f54f74bb54c8d0b220c3f9,
         type: 3}

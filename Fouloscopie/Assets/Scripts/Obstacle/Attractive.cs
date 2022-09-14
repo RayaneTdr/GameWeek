@@ -29,10 +29,10 @@ public class Attractive : Obstacle
     {
         if(base.Drop())
         {
-            WaveManager.Instance.promotionT = transform;
+            WaveManager.Instance.promoT = transform;
             WaveManager.Instance.LaunchDistraction();
 
-            //FX.SetActive(true);
+            FX.SetActive(true);
             Chrono.SetActive(true);
             GameManager.Instance.audioManager.Play("BonusAlert");        
             return true;
