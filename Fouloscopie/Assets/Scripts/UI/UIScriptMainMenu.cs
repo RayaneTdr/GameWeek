@@ -5,10 +5,12 @@ public class UIScriptMainMenu : MonoBehaviour
 {
     [SerializeField] private string m_scene;
     [SerializeField] private string m_mainMenu;
+
+    [SerializeField] GameObject transition;
     public void OnPlayButtonPressed()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(m_scene);
+        transition.GetComponentInChildren<Animator>().SetTrigger("Play");
     }
 
     public void OnQuitButtonPressed()
@@ -22,5 +24,10 @@ public class UIScriptMainMenu : MonoBehaviour
 
         SceneManager.LoadScene(m_mainMenu);
 
+    }
+
+    public void LoadMap() 
+    {
+        SceneManager.LoadScene(m_scene);
     }
 }
