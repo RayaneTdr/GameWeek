@@ -322,6 +322,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 4402615946903321741}
+        m_TargetAssemblyTypeName: UIScriptAudio, Assembly-CSharp
+        m_MethodName: PlayButtonClicked
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ButtonClick
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &2878884929381858317
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +923,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4402615946903321741}
+        m_TargetAssemblyTypeName: UIScriptAudio, Assembly-CSharp
+        m_MethodName: PlayButtonClicked
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ButtonClick
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4685719577846218406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1083,7 @@ GameObject:
   - component: {fileID: 4239857863991392301}
   - component: {fileID: 360152354747800149}
   - component: {fileID: 1410899053363137657}
+  - component: {fileID: 4402615946903321741}
   m_Layer: 0
   m_Name: TabHome
   m_TagString: Untagged
@@ -1217,6 +1242,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4402615946903321741}
+        m_TargetAssemblyTypeName: UIScriptAudio, Assembly-CSharp
+        m_MethodName: PlayButtonClicked
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ButtonClick
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4402615946903321741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762665970156345733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad4cfebbf159804497d9636ee735526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4867902524725452127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,6 +1991,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4402615946903321741}
+        m_TargetAssemblyTypeName: UIScriptAudio, Assembly-CSharp
+        m_MethodName: PlayButtonClicked
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ButtonClicked
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8125064639169292268
 GameObject:
   m_ObjectHideFlags: 0
@@ -2346,6 +2407,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447702626574320842, guid: fb3880e12a068434b8ca47cdd96785fb,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447702626574320842, guid: fb3880e12a068434b8ca47cdd96785fb,
+        type: 3}
+      propertyPath: m_MinValue
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001293896396265930, guid: fb3880e12a068434b8ca47cdd96785fb,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001293896396265930, guid: fb3880e12a068434b8ca47cdd96785fb,
+        type: 3}
+      propertyPath: m_MinValue
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 8909970846223401561, guid: fb3880e12a068434b8ca47cdd96785fb,
         type: 3}
