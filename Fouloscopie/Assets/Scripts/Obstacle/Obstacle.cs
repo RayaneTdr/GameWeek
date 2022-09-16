@@ -295,9 +295,4 @@ public class Obstacle : MonoBehaviour
         //m_animator.SetTrigger("Destroy");
         Destroy(gameObject);
     }
-
-    public void Remove()
-    {
-        Destroy(gameObject);
-    }
 }

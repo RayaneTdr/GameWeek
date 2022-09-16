@@ -23,6 +23,8 @@ public class Dummy : MonoBehaviour
 
     [SerializeField] GameObject willDieSystem = null;
 
+    [SerializeField] AudioSource source;
+
     SpatializedSource sound;
 
     public GameObject decal;
@@ -44,6 +46,8 @@ public class Dummy : MonoBehaviour
         agent = GetComponent<AIDestinationSetter>();
         animator = GetComponentInChildren<Animator>();
         sound = GetComponent<SpatializedSource>();
+
+        GetComponent<AIPath>().maxSpeed = 3f + Random.value * 4f;
 
         SetMarketDestination();
     }
@@ -169,6 +173,8 @@ public class Dummy : MonoBehaviour
         agent.enabled = false;
 
         sound.Play("CustomerDeath");
+        source.clip = GameManager.Instance.audioManager.GetClip("CustomerScream");
+        source.Play();
 
         WaveManager.diedDummies++;
         StartCoroutine(CorpseAnimation());

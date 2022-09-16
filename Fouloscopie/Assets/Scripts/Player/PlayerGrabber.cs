@@ -115,6 +115,7 @@ public class PlayerGrabber : MonoBehaviour
             {
                 if (hit.transform.gameObject.TryGetComponent<Obstacle>(out Obstacle obstacle) && obstacle.isMovable)
                 {
+                    GameManager.Instance.audioManager.Play("BoxPickup");
                     BeginDrag(obstacle);
                 }
             }

@@ -42,7 +42,7 @@ public class WaveManager : MonoBehaviour
     public GameObject endOutro;
     public int waveIndex = -1;
 
-    public Transform promoT;
+    [HideInInspector] public Transform promoT;
 
     public static int diedDummies = 0;
     public static int savedDummies = 0;
