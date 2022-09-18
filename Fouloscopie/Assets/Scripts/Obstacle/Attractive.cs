@@ -33,8 +33,7 @@ public class Attractive : Obstacle
             WaveManager.Instance.LaunchDistraction();
 
             FX.SetActive(true);
-            Chrono.SetActive(true);
-            GameManager.Instance.audioManager.Play("BonusAlert");        
+            Chrono.SetActive(true);  
             return true;
         }
 

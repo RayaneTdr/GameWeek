@@ -18,6 +18,8 @@ public class Obstacle : MonoBehaviour
     private float m_scale = 1f;
     private float m_yawRotation = 0f;
 
+    [SerializeField] string audioName;
+
     private Vector3 m_grabOffset;
     private bool    m_grabOffsetSet = true;
 
@@ -187,6 +189,7 @@ public class Obstacle : MonoBehaviour
                 i++;
             }
 
+            GameManager.Instance.audioManager.Play(audioName);
             success = true;
         }
         else

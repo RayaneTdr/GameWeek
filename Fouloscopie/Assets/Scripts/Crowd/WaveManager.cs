@@ -137,15 +137,16 @@ public class WaveManager : MonoBehaviour
 
     public int SelectSpawner()
     {
-        int index = Random.Range(0, 10);
+        int index = Random.Range(0, 2);
         
-        if (index < 5)
+        if (index == 1)
             return focusedSpawner[waveIndex];
-        
-        //[0 1 2 3] 
 
         index = Random.Range(0, 2);
 
+        Debug.Log((int)Mathf.Repeat(focusedSpawner[waveIndex] - 1, focusedSpawner.Count - 1));
+        Debug.Log((int)Mathf.Repeat(focusedSpawner[waveIndex] + 1, focusedSpawner.Count - 1));
+        
         if (index == 0)
             return (int)Mathf.Repeat(focusedSpawner[waveIndex] - 1, focusedSpawner.Count - 1);
         else

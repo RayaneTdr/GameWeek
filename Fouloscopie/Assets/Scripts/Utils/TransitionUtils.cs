@@ -7,5 +7,6 @@ public class TransitionUtils : MonoBehaviour
     private void Start()
     {
         GetComponent<Animator>().SetTrigger("backward");
+        Destroy(transform.root.gameObject, 3f);
     }
 }

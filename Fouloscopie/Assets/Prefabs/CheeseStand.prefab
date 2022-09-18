@@ -280,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMovable: 1
+  audioName: CheeseBox
   m_previewMaterial: {fileID: 2100000, guid: ebbc84d69dad3f1489febb02d9bf5807, type: 2}
   m_model: {fileID: 622503566474662057}
   bounceSpeed: 10

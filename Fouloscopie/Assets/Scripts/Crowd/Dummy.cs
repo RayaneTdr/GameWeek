@@ -172,6 +172,7 @@ public class Dummy : MonoBehaviour
         GetComponent<Pathfinding.RVO.RVOController>().enabled = false;
         agent.enabled = false;
 
+        GetComponentInChildren<Outline>().enabled = false;
         sound.Play("CustomerDeath");
         source.clip = GameManager.Instance.audioManager.GetClip("CustomerScream");
         source.Play();
