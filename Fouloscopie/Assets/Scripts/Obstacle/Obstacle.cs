@@ -174,7 +174,11 @@ public class Obstacle : MonoBehaviour
         {
             foreach (Dummy dummy in m_dummiesInPreviewZone)
             {
-                if(dummy) dummy.Kill();
+                if (dummy) 
+                {
+                    dummy.Kill();
+                    WaveManager.crushedDummies++;
+                }
             }
 
             m_collider.isTrigger = false;
@@ -239,6 +243,7 @@ public class Obstacle : MonoBehaviour
         {
             m_savedPosition = transform.position;
             m_savedRotation = transform.rotation;
+            WaveManager.replacedBuildings++;
         }
 
         //  Set to trigger for grab and drop checks

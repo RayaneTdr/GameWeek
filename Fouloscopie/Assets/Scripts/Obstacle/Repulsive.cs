@@ -17,6 +17,7 @@ public class Repulsive : MonoBehaviour
         col.radius = radius;
         AstarPath.active.Scan();
         Invoke("ResetAndDestroy", time);
+        WaveManager.placedSmokes++;
     }
 
 

@@ -44,8 +44,13 @@ public class WaveManager : MonoBehaviour
 
     [HideInInspector] public Transform promoT;
 
-    public static int diedDummies = 0;
-    public static int savedDummies = 0;
+    public static int diedDummies       = 0;
+    public static int savedDummies      = 0;
+    public static int placedSmokes      = 0;
+    public static int crushedDummies    = 0;
+    public static int replacedBuildings = 0;
+    public static int attractedDummies  = 0;
+    public static int carriedArticles   = 0;
 
     bool dirtyFlag = false; // gros gros ratio
     
@@ -115,6 +120,7 @@ public class WaveManager : MonoBehaviour
                 if (CanSpawn())
                 {
                     int spawnerIndex = SelectSpawner();
+                    Debug.Log(spawnerIndex);
                     spawners[spawnerIndex].AddDummy();
                     countToDispatch--;
                     waves[waveIndex]--;
@@ -144,13 +150,13 @@ public class WaveManager : MonoBehaviour
 
         index = Random.Range(0, 2);
 
-        Debug.Log((int)Mathf.Repeat(focusedSpawner[waveIndex] - 1, focusedSpawner.Count - 1));
-        Debug.Log((int)Mathf.Repeat(focusedSpawner[waveIndex] + 1, focusedSpawner.Count - 1));
+        Debug.Log((int)Mathf.Repeat(focusedSpawner[waveIndex] - 1, spawners.Count - 1));
+        Debug.Log((int)Mathf.Repeat(focusedSpawner[waveIndex] + 1, spawners.Count - 1));
         
         if (index == 0)
-            return (int)Mathf.Repeat(focusedSpawner[waveIndex] - 1, focusedSpawner.Count - 1);
+            return (int)Mathf.Repeat(focusedSpawner[waveIndex] - 1, spawners.Count - 1);
         else
-            return (int)Mathf.Repeat(focusedSpawner[waveIndex] + 1, focusedSpawner.Count - 1);
+            return (int)Mathf.Repeat(focusedSpawner[waveIndex] + 1, spawners.Count - 1);
        
     }
 
@@ -190,6 +196,7 @@ public class WaveManager : MonoBehaviour
         {
             dummies[Random.Range(0, dummies.Count)].SetPromotionDestination();
             countToAttract--;
+            attractedDummies++;
         }
         GameManager.Instance.audioManager.Play("BonusAlert");
     }
