@@ -369,7 +369,7 @@ MonoBehaviour:
   alive: 1
   corpseDuration: 1.5
   willDieSystem: {fileID: 7356224195044629811}
-  source: {fileID: -8353554258489183892, guid: fdcbdd0cd860da845bd4a1d3e8341b6b, type: 3}
+  source: {fileID: 4858293660899330722}
   decal: {fileID: 8124389831540866192}
   isLeaving: 0
   deathIncreaseChance: 0

@@ -229,9 +229,7 @@ public class Dummy : MonoBehaviour
 
     public void Leave() 
     {
-        GameManager.Instance.audioManager.Play("CashMachine");
         WaveManager.savedDummies++;
-        // play saved animation
         Destroy(gameObject);
     }   
 }

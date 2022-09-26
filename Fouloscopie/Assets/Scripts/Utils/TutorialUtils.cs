@@ -7,7 +7,8 @@ public class TutorialUtils : MonoBehaviour
 
     [SerializeField] GameObject player = null;
     [SerializeField] private bool forceTutotial = false;
-
+    [SerializeField] GameObject transition = null;
+    
     PlayableDirector director;
 
     private void Awake()
@@ -43,6 +44,9 @@ public class TutorialUtils : MonoBehaviour
         player.SetActive(true);
 
         gameObject.SetActive(false);
+        
+        if (transition)
+            transition.SetActive(false);
     }
 
     private void Update()
